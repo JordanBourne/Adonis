@@ -1,14 +1,15 @@
-{
+module.exports = {
 	programName: 'ULULU Split',
 	programDuration: '28',
-	progressions: {
-		bench: {
+	progressions: [
+		{
+			movement: 'bench',
 			frequency: 'week',
 			amount: '5',
 			condition: 'reps',
 			conditionAmount: '8'
 		}
-	},
+	],
 	workouts: [
 		{
 			day: '1',
@@ -907,7 +908,7 @@
 							repeat: '2',
 							reps: '3',
 							plusSet: false
-						}
+						},
 						{
 							setNumber: '5',
 							weight: '90',
@@ -915,7 +916,7 @@
 							repeat: '2',
 							reps: '1',
 							plusSet: false
-						},
+						}
 					]
 				},
 				{
@@ -1278,7 +1279,7 @@
 							repeat: '2',
 							reps: '3',
 							plusSet: false
-						}
+						},
 						{
 							setNumber: '5',
 							weight: '80',
@@ -1286,7 +1287,7 @@
 							repeat: '2',
 							reps: '2',
 							plusSet: false
-						},
+						}
 					]
 				},
 				{
