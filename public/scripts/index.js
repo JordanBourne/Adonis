@@ -2,7 +2,7 @@ var HttpClient = function() {
     this.get = function(url, callback) {
         var anHttpRequest = new XMLHttpRequest();
         anHttpRequest.responseType = 'json';
-        anHttpRequest.onreadystatechange = function() { 
+        anHttpRequest.onreadystatechange = function() {
             if (anHttpRequest.readyState == 4) {
             	if(anHttpRequest.status == 200) {
 	                callback(null, anHttpRequest.response);
@@ -45,7 +45,14 @@ function getPrograms() {
 		if(err) {
 			return console.log(err);
 		}
-		console.log(err, response);
-		return console.log(typeof response);
+
+        var programs = response.data.programs
+        return showPrograms(programs);
 	});
+}
+
+function showPrograms(programs) {
+    programs.forEach(function(program) {
+        document.getElementById('programList').innerHTML = program.programName;
+    })
 }
