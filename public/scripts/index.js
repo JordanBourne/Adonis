@@ -18,9 +18,9 @@ var HttpClient = function() {
 
     this.post = function(url, params, callback) {
     	if(typeof params === 'function') {
-    		callback = params;
-    		params = null;
-    	}
+            callback = params;
+            params = null;
+        }
         var anHttpRequest = new XMLHttpRequest();
         anHttpRequest.responseType = 'json';
         anHttpRequest.onreadystatechange = function() {
@@ -35,8 +35,8 @@ var HttpClient = function() {
 
         anHttpRequest.open("POST", url, true);
         anHttpRequest.send(params);
-    }
-}
+    };
+};
 
 var request = new HttpClient();
 
@@ -53,6 +53,24 @@ function getPrograms() {
 
 function showPrograms(programs) {
     programs.forEach(function(program) {
-        document.getElementById('programList').innerHTML = program.programName;
-    })
+        var btn = document.createElement("BUTTON");
+        var btnText = document.createTextNode(program.programName);
+        btn.appendChild(btnText);
+        btn.onclick = function() {
+            sessionStorage.setItem('currentProgram', JSON.stringify(program));
+            checkForProgram();
+        }
+        document.getElementById('programList').appendChild(btn);
+    });
 }
+
+function checkForProgram() {
+    var currentProgram = JSON.parse(sessionStorage.getItem('currentProgram'));
+    if (currentProgram) {
+        document.getElementById('programBody').innerHTML = '<h1>' + currentProgram.programName + '</h1>';
+    }
+}
+
+window.onload = function() {
+    checkForProgram();
+};
