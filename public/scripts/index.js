@@ -41,7 +41,7 @@ var HttpClient = function() {
 var request = new HttpClient();
 
 function getPrograms() {
-	request.get('http://localhost:3000/v1/getPrograms', function(err, response) {
+	request.post('http://localhost:3000/v1/getPrograms', function(err, response) {
 		if(err) {
 			return console.log(err);
 		}

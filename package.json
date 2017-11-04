@@ -10,10 +10,12 @@
   "license": "ISC",
   "dependencies": {
     "async": "^2.5.0",
+    "body-parser": "^1.18.2",
     "chai": "^4.1.2",
     "dotenv": "^4.0.0",
     "express": "^4.15.3",
     "lodash": "^4.17.4",
+    "request": "^2.83.0",
     "sinon": "^3.2.1",
     "vogels": "^2.2.0"
   },
