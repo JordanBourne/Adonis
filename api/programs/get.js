@@ -1,11 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const sharedMiddleware = require('../../middleware');
+const joi = require('joi');
 
 const getPrograms = require('./getPrograms');
 
 router
-    .get('/getPrograms',
+    .post('/getPrograms',
         getPrograms,
         sharedMiddleware.success);
 

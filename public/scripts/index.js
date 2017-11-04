@@ -41,7 +41,7 @@ var HttpClient = function() {
 var request = new HttpClient();
 
 function getPrograms() {
-	request.get('http://localhost:3000/v1/getPrograms', function(err, response) {
+	request.post('http://localhost:3000/v1/getPrograms', function(err, response) {
 		if(err) {
 			return console.log(err);
 		}
@@ -56,3 +56,14 @@ function showPrograms(programs) {
         document.getElementById('programList').innerHTML = program.programName;
     })
 }
+
+function checkForProgram() {
+    var currentProgram = JSON.parse(sessionStorage.getItem('currentProgram'));
+    if (currentProgram) {
+        document.getElementById('programBody').innerHTML = '<h1>' + currentProgram.programName + '</h1>';
+    }
+}
+
+window.onload = function() {
+    checkForProgram();
+};

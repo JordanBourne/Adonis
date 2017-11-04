@@ -3,7 +3,7 @@ const ListPrograms = sdk.programs.listPrograms;
 
 module.exports = function(req, res, next) {
 	ListPrograms.create({
-		filter: null
+		filters: req.body.filters
 	}).execute((err, programs) => {
 		if(err) {
 			console.log(err);
