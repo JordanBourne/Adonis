@@ -31,7 +31,7 @@ describe('Programs::', function() {
             it('should filter a list of programs', function(done) {
                 ListPrograms.create({
                     filters: {
-                        programDuration: '28'
+                        duration: '28'
                     }
                 }).execute((err, programs) => {
                     assert(!err, JSON.stringify(err));
@@ -42,7 +42,7 @@ describe('Programs::', function() {
             it('should handle no results', function(done) {
                 ListPrograms.create({
                     filters: {
-                        programDuration: '280'
+                        duration: '280'
                     }
                 }).execute((err, programs) => {
                     assert(!err, JSON.stringify(err));
