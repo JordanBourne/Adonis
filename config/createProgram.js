@@ -1,6 +1,26 @@
 module.exports = {
-	programName: 'ULULU Split',
-	programDuration: '28',
+	details: {
+		name: 'ULULU Split',
+		duration: '28',
+		schedule: '0111110',
+		daysPerWeek: 5,
+		movements: [
+			'Row',
+			'Bench',
+			'Strict Press',
+			'Pull Up',
+			'Dip',
+			'Curl',
+			'Squat',
+			'Sumo Deadlift',
+			'Incline Press',
+			'Deadlift',
+			'Front Squat',
+			'Chin Up',
+			'Ring Dip',
+			'Lateral Raise'
+		]
+	},
 	progressions: [
 		{
 			movement: 'bench',

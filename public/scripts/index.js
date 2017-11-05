@@ -1,7 +1,7 @@
 function checkForProgram() {
-    var currentProgram = JSON.parse(sessionStorage.getItem('currentProgram'));
+    var currentProgram = JSON.parse(localStorage.getItem('currentProgram'));
     if (currentProgram) {
-        document.getElementById('programBody').innerHTML = '<h1>' + currentProgram.programName + '</h1>';
+        document.getElementById('programBody').innerHTML = '<h1>' + currentProgram.details.name + '</h1>';
     }
 }
 
