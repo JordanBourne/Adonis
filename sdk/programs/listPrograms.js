@@ -35,7 +35,7 @@ ListPrograms.prototype._filterPrograms = function(callback) {
     let filters = _.keys(this.filters);
     let filteredPrograms = _.filter(this.programs, (program) => {
         return filters.every((filter) => {
-            return program[filter] === this.filters[filter];
+            return program.details[filter] === this.filters[filter];
         });
     });
 

@@ -15,12 +15,16 @@ describe('ChooseAProgram::', function() {
                 request({
                     method: 'POST',
                     uri: 'http://localhost:3000/v1/getPrograms',
-                    json: {}
+                    json: {
+                        name: 'ULULU Split'
+                    }
                 }, (err, res, body) => {
                     assert(!err, JSON.stringify(err));
                     expect(res.statusCode).to.be.below(400);
                     expect(body.success).to.equal(true);
-                    chosenProgram = _.find(body.data.programs, { programName: 'ULULU Split' });
+                    chosenProgram = _.find(body.data.programs, (program) => {
+                        return program.details.name === 'ULULU Split'
+                    });
                     assert(chosenProgram, 'Expected to find ULULU Split')
                     done();
                 });
