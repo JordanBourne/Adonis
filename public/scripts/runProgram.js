@@ -1,8 +1,8 @@
 var runProgram = (function() {
     function findTodaysWorkout(program) {
         var currentDay = program.currentDay || 1;
-        return program.workouts.find((workout) => {
-            return workout.day === String(currentDay);
+        return program.workouts.find((dailyWorkout) => {
+            return dailyWorkout.day === String(currentDay);
         });
     }
 
@@ -24,7 +24,7 @@ var runProgram = (function() {
             Please enter your max lifts for the workout today: <br />
                 <div id="getMissingMaxes">`)
         missingMaxes.forEach((missingMax) => {
-            var movementName = missingMax.replace(/([A-Z]+)/g, " $1").replace(/([A-Z][a-z])/g, " $1")
+            var movementName = utility.nameCase(missingMax);
             inputFields.push(`${movementName}: <input type="number" id="${missingMax}" required></input>`);
         })
         inputFields.push(`
@@ -51,7 +51,7 @@ var runProgram = (function() {
             if(missingMaxes.length) {
                 getMissingMaxes(missingMaxes);
             } else {
-                workout.startWorkout(todaysWorkout);
+                workout.init(todaysWorkout);
             }
         },
 

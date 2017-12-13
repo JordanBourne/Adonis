@@ -43,7 +43,34 @@ module.exports = {
 							setNumber: '1',
 							weight: '75',
 							weightType: 'relative',
-							repeat: '5',
+							reps: '5',
+							plusSet: false
+						},
+						{
+							setNumber: '2',
+							weight: '75',
+							weightType: 'relative',
+							reps: '5',
+							plusSet: false
+						},
+						{
+							setNumber: '3',
+							weight: '75',
+							weightType: 'relative',
+							reps: '5',
+							plusSet: false
+						},
+						{
+							setNumber: '4',
+							weight: '75',
+							weightType: 'relative',
+							reps: '5',
+							plusSet: false
+						},
+						{
+							setNumber: '5',
+							weight: '75',
+							weightType: 'relative',
 							reps: '5',
 							plusSet: false
 						}
@@ -58,10 +85,37 @@ module.exports = {
 							setNumber: '1',
 							weight: '10',
 							weightType: 'absolute',
-							repeat: '5',
 							reps: '10',
 							plusSet: false
-						}
+						},
+						{
+							setNumber: '2',
+							weight: '10',
+							weightType: 'absolute',
+							reps: '10',
+							plusSet: false
+						},
+						{
+							setNumber: '3',
+							weight: '10',
+							weightType: 'absolute',
+							reps: '10',
+							plusSet: false
+						},
+						{
+							setNumber: '4',
+							weight: '10',
+							weightType: 'absolute',
+							reps: '10',
+							plusSet: false
+						},
+						{
+							setNumber: '5',
+							weight: '10',
+							weightType: 'absolute',
+							reps: '10',
+							plusSet: false
+						},
 					]
 				},
 				{
@@ -73,10 +127,23 @@ module.exports = {
 							setNumber: '1',
 							weight: '70',
 							weightType: 'relative',
-							repeat: '3',
 							reps: '5',
 							plusSet: false
-						}
+						},
+						{
+							setNumber: '2',
+							weight: '70',
+							weightType: 'relative',
+							reps: '5',
+							plusSet: false
+						},
+						{
+							setNumber: '3',
+							weight: '70',
+							weightType: 'relative',
+							reps: '5',
+							plusSet: false
+						},
 					]
 				},
 				{
@@ -86,10 +153,19 @@ module.exports = {
 					sets: [
 						{
 							setNumber: '1',
-							repeat: '3',
 							reps: '5',
 							plusSet: false
-						}
+						},
+						{
+							setNumber: '2',
+							reps: '5',
+							plusSet: false
+						},
+						{
+							setNumber: '3',
+							reps: '5',
+							plusSet: false
+						},
 					]
 				},
 				{
@@ -99,10 +175,19 @@ module.exports = {
 					sets: [
 						{
 							setNumber: '1',
-							repeat: '3',
 							reps: '15',
 							plusSet: false
-						}
+						},
+						{
+							setNumber: '2',
+							reps: '15',
+							plusSet: false
+						},
+						{
+							setNumber: '3',
+							reps: '15',
+							plusSet: false
+						},
 					]
 				},
 				{
@@ -114,10 +199,23 @@ module.exports = {
 							setNumber: '1',
 							weight: '25',
 							weightType: 'absolute',
-							repeat: '3',
 							reps: '10',
 							plusSet: false
-						}
+						},
+						{
+							setNumber: '2',
+							weight: '25',
+							weightType: 'absolute',
+							reps: '10',
+							plusSet: false
+						},
+						{
+							setNumber: '3',
+							weight: '25',
+							weightType: 'absolute',
+							reps: '10',
+							plusSet: false
+						},
 					]
 				}
 			]
