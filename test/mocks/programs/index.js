@@ -1,4 +1,4 @@
 module.exports = {
-    simple: require('./simple'),
-    programList: require('./programList')
-}
+	simple: require('./simple'),
+	programList: require('./programList')
+};

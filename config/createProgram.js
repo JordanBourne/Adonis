@@ -32,11 +32,11 @@ module.exports = {
 	],
 	workouts: [
 		{
-			day: '1',
+			day: 1,
 			exercises: [
 				{
-					order: '1',
-					superset: '1',
+					order: 1,
+					superset: 1,
 					movement: 'bench',
 					sets: [
 						{
@@ -77,8 +77,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '1',
-					superset: '2',
+					order: 1,
+					superset: 2,
 					movement: 'row',
 					sets: [
 						{
@@ -119,8 +119,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '2',
-					superset: '1',
+					order: 2,
+					superset: 1,
 					movement: 'strictPress',
 					sets: [
 						{
@@ -147,8 +147,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '2',
-					superset: '2',
+					order: 2,
+					superset: 2,
 					movement: 'pullUp',
 					sets: [
 						{
@@ -169,8 +169,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '3',
-					superset: '1',
+					order: 3,
+					superset: 1,
 					movement: 'dip',
 					sets: [
 						{
@@ -191,8 +191,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '3',
-					superset: '2',
+					order: 3,
+					superset: 2,
 					movement: 'curl',
 					sets: [
 						{
@@ -221,10 +221,10 @@ module.exports = {
 			]
 		},
 		{
-			day: '2',
+			day: 2,
 			exercises: [
 				{
-					order: '1',
+					order: 1,
 					movement: 'squat',
 					sets: [
 						{
@@ -238,7 +238,7 @@ module.exports = {
 					]
 				},
 				{
-					order: '2',
+					order: 2,
 					movement: 'sumoDeadlift',
 					sets: [
 						{
@@ -254,11 +254,11 @@ module.exports = {
 			]
 		},
 		{
-			day: '3',
+			day: 3,
 			exercises: [
 				{
-					order: '1',
-					superset: '1',
+					order: 1,
+					superset: 1,
 					movement: 'bench',
 					sets: [
 						{
@@ -296,8 +296,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '1',
-					superset: '2',
+					order: 1,
+					superset: 2,
 					movement: 'row',
 					sets: [
 						{
@@ -311,8 +311,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '2',
-					superset: '1',
+					order: 2,
+					superset: 1,
 					movement: 'inclinePress',
 					sets: [
 						{
@@ -326,8 +326,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '2',
-					superset: '2',
+					order: 2,
+					superset: 2,
 					movement: 'pullUp',
 					sets: [
 						{
@@ -339,8 +339,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '3',
-					superset: '1',
+					order: 3,
+					superset: 1,
 					movement: 'dip',
 					sets: [
 						{
@@ -352,8 +352,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '3',
-					superset: '2',
+					order: 3,
+					superset: 2,
 					movement: 'curl',
 					sets: [
 						{
@@ -369,10 +369,10 @@ module.exports = {
 			]
 		},
 		{
-			day: '4',
+			day: 4,
 			exercises: [
 				{
-					order: '1',
+					order: 1,
 					movement: 'deadlift',
 					sets: [
 						{
@@ -386,7 +386,7 @@ module.exports = {
 					]
 				},
 				{
-					order: '2',
+					order: 2,
 					movement: 'frontSquat',
 					sets: [
 						{
@@ -410,10 +410,10 @@ module.exports = {
 			]
 		},
 		{
-			day: '5',
+			day: 5,
 			exercises: [
 				{
-					order: '1',
+					order: 1,
 					movement: 'bench',
 					sets: [
 						{
@@ -427,8 +427,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '2',
-					superset: '1',
+					order: 2,
+					superset: 1,
 					movement: 'strictPress',
 					sets: [
 						{
@@ -442,8 +442,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '2',
-					superset: '2',
+					order: 2,
+					superset: 2,
 					movement: 'chinUp',
 					sets: [
 						{
@@ -455,8 +455,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '3',
-					superset: '1',
+					order: 3,
+					superset: 1,
 					movement: 'ringDip',
 					sets: [
 						{
@@ -468,8 +468,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '3',
-					superset: '2',
+					order: 3,
+					superset: 2,
 					movement: 'lateralRaise',
 					sets: [
 						{
@@ -485,11 +485,11 @@ module.exports = {
 			]
 		},
 		{
-			day: '6',
+			day: 6,
 			exercises: [
 				{
-					order: '1',
-					superset: '1',
+					order: 1,
+					superset: 1,
 					movement: 'bench',
 					sets: [
 						{
@@ -511,8 +511,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '1',
-					superset: '2',
+					order: 1,
+					superset: 2,
 					movement: 'row',
 					sets: [
 						{
@@ -526,8 +526,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '2',
-					superset: '1',
+					order: 2,
+					superset: 1,
 					movement: 'strictPress',
 					sets: [
 						{
@@ -541,8 +541,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '2',
-					superset: '2',
+					order: 2,
+					superset: 2,
 					movement: 'pullUp',
 					sets: [
 						{
@@ -554,8 +554,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '3',
-					superset: '1',
+					order: 3,
+					superset: 1,
 					movement: 'ringDip',
 					sets: [
 						{
@@ -567,8 +567,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '3',
-					superset: '2',
+					order: 3,
+					superset: 2,
 					movement: 'curl',
 					sets: [
 						{
@@ -584,10 +584,10 @@ module.exports = {
 			]
 		},
 		{
-			day: '7',
+			day: 7,
 			exercises: [
 				{
-					order: '1',
+					order: 1,
 					movement: 'squat',
 					sets: [
 						{
@@ -601,7 +601,7 @@ module.exports = {
 					]
 				},
 				{
-					order: '2',
+					order: 2,
 					movement: 'sumoDeadlift',
 					sets: [
 						{
@@ -617,11 +617,11 @@ module.exports = {
 			]
 		},
 		{
-			day: '8',
+			day: 8,
 			exercises: [
 				{
-					order: '1',
-					superset: '1',
+					order: 1,
+					superset: 1,
 					movement: 'bench',
 					sets: [
 						{
@@ -667,8 +667,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '1',
-					superset: '2',
+					order: 1,
+					superset: 2,
 					movement: 'row',
 					sets: [
 						{
@@ -682,8 +682,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '2',
-					superset: '1',
+					order: 2,
+					superset: 1,
 					movement: 'inclinePress',
 					sets: [
 						{
@@ -697,8 +697,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '2',
-					superset: '2',
+					order: 2,
+					superset: 2,
 					movement: 'pullUp',
 					sets: [
 						{
@@ -710,8 +710,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '3',
-					superset: '1',
+					order: 3,
+					superset: 1,
 					movement: 'dip',
 					sets: [
 						{
@@ -723,8 +723,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '3',
-					superset: '2',
+					order: 3,
+					superset: 2,
 					movement: 'curl',
 					sets: [
 						{
@@ -740,10 +740,10 @@ module.exports = {
 			]
 		},
 		{
-			day: '9',
+			day: 9,
 			exercises: [
 				{
-					order: '1',
+					order: 1,
 					movement: 'deadlift',
 					sets: [
 						{
@@ -757,7 +757,7 @@ module.exports = {
 					]
 				},
 				{
-					order: '2',
+					order: 2,
 					movement: 'frontSquat',
 					sets: [
 						{
@@ -781,10 +781,10 @@ module.exports = {
 			]
 		},
 		{
-			day: '10',
+			day: 10,
 			exercises: [
 				{
-					order: '1',
+					order: 1,
 					movement: 'bench',
 					sets: [
 						{
@@ -798,8 +798,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '2',
-					superset: '1',
+					order: 2,
+					superset: 1,
 					movement: 'strictPress',
 					sets: [
 						{
@@ -813,8 +813,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '2',
-					superset: '2',
+					order: 2,
+					superset: 2,
 					movement: 'chinUp',
 					sets: [
 						{
@@ -826,8 +826,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '3',
-					superset: '1',
+					order: 3,
+					superset: 1,
 					movement: 'ringDip',
 					sets: [
 						{
@@ -839,8 +839,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '3',
-					superset: '2',
+					order: 3,
+					superset: 2,
 					movement: 'lateralRaise',
 					sets: [
 						{
@@ -856,11 +856,11 @@ module.exports = {
 			]
 		},
 		{
-			day: '11',
+			day: 11,
 			exercises: [
 				{
-					order: '1',
-					superset: '1',
+					order: 1,
+					superset: 1,
 					movement: 'bench',
 					sets: [
 						{
@@ -882,8 +882,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '1',
-					superset: '2',
+					order: 1,
+					superset: 2,
 					movement: 'row',
 					sets: [
 						{
@@ -897,8 +897,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '2',
-					superset: '1',
+					order: 2,
+					superset: 1,
 					movement: 'strictPress',
 					sets: [
 						{
@@ -912,8 +912,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '2',
-					superset: '2',
+					order: 2,
+					superset: 2,
 					movement: 'pullUp',
 					sets: [
 						{
@@ -925,8 +925,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '3',
-					superset: '1',
+					order: 3,
+					superset: 1,
 					movement: 'ringDip',
 					sets: [
 						{
@@ -938,8 +938,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '3',
-					superset: '2',
+					order: 3,
+					superset: 2,
 					movement: 'curl',
 					sets: [
 						{
@@ -955,10 +955,10 @@ module.exports = {
 			]
 		},
 		{
-			day: '12',
+			day: 12,
 			exercises: [
 				{
-					order: '1',
+					order: 1,
 					movement: 'squat',
 					sets: [
 						{
@@ -972,7 +972,7 @@ module.exports = {
 					]
 				},
 				{
-					order: '2',
+					order: 2,
 					movement: 'sumoDeadlift',
 					sets: [
 						{
@@ -988,11 +988,11 @@ module.exports = {
 			]
 		},
 		{
-			day: '13',
+			day: 13,
 			exercises: [
 				{
-					order: '1',
-					superset: '1',
+					order: 1,
+					superset: 1,
 					movement: 'bench',
 					sets: [
 						{
@@ -1038,8 +1038,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '1',
-					superset: '2',
+					order: 1,
+					superset: 2,
 					movement: 'row',
 					sets: [
 						{
@@ -1053,8 +1053,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '2',
-					superset: '1',
+					order: 2,
+					superset: 1,
 					movement: 'inclinePress',
 					sets: [
 						{
@@ -1068,8 +1068,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '2',
-					superset: '2',
+					order: 2,
+					superset: 2,
 					movement: 'pullUp',
 					sets: [
 						{
@@ -1081,8 +1081,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '3',
-					superset: '1',
+					order: 3,
+					superset: 1,
 					movement: 'dip',
 					sets: [
 						{
@@ -1094,8 +1094,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '3',
-					superset: '2',
+					order: 3,
+					superset: 2,
 					movement: 'curl',
 					sets: [
 						{
@@ -1111,10 +1111,10 @@ module.exports = {
 			]
 		},
 		{
-			day: '14',
+			day: 14,
 			exercises: [
 				{
-					order: '1',
+					order: 1,
 					movement: 'deadlift',
 					sets: [
 						{
@@ -1128,7 +1128,7 @@ module.exports = {
 					]
 				},
 				{
-					order: '2',
+					order: 2,
 					movement: 'frontSquat',
 					sets: [
 						{
@@ -1152,10 +1152,10 @@ module.exports = {
 			]
 		},
 		{
-			day: '15',
+			day: 15,
 			exercises: [
 				{
-					order: '1',
+					order: 1,
 					movement: 'bench',
 					sets: [
 						{
@@ -1169,8 +1169,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '2',
-					superset: '1',
+					order: 2,
+					superset: 1,
 					movement: 'strictPress',
 					sets: [
 						{
@@ -1184,8 +1184,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '2',
-					superset: '2',
+					order: 2,
+					superset: 2,
 					movement: 'chinUp',
 					sets: [
 						{
@@ -1197,8 +1197,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '3',
-					superset: '1',
+					order: 3,
+					superset: 1,
 					movement: 'ringDip',
 					sets: [
 						{
@@ -1210,8 +1210,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '3',
-					superset: '2',
+					order: 3,
+					superset: 2,
 					movement: 'lateralRaise',
 					sets: [
 						{
@@ -1227,11 +1227,11 @@ module.exports = {
 			]
 		},
 		{
-			day: '16',
+			day: 16,
 			exercises: [
 				{
-					order: '1',
-					superset: '1',
+					order: 1,
+					superset: 1,
 					movement: 'bench',
 					sets: [
 						{
@@ -1253,8 +1253,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '1',
-					superset: '2',
+					order: 1,
+					superset: 2,
 					movement: 'row',
 					sets: [
 						{
@@ -1268,8 +1268,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '2',
-					superset: '1',
+					order: 2,
+					superset: 1,
 					movement: 'strictPress',
 					sets: [
 						{
@@ -1283,8 +1283,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '2',
-					superset: '2',
+					order: 2,
+					superset: 2,
 					movement: 'pullUp',
 					sets: [
 						{
@@ -1296,8 +1296,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '3',
-					superset: '1',
+					order: 3,
+					superset: 1,
 					movement: 'ringDip',
 					sets: [
 						{
@@ -1309,8 +1309,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '3',
-					superset: '2',
+					order: 3,
+					superset: 2,
 					movement: 'curl',
 					sets: [
 						{
@@ -1326,10 +1326,10 @@ module.exports = {
 			]
 		},
 		{
-			day: '17',
+			day: 17,
 			exercises: [
 				{
-					order: '1',
+					order: 1,
 					movement: 'squat',
 					sets: [
 						{
@@ -1343,7 +1343,7 @@ module.exports = {
 					]
 				},
 				{
-					order: '2',
+					order: 2,
 					movement: 'deadlift',
 					sets: [
 						{
@@ -1359,11 +1359,11 @@ module.exports = {
 			]
 		},
 		{
-			day: '18',
+			day: 18,
 			exercises: [
 				{
-					order: '1',
-					superset: '1',
+					order: 1,
+					superset: 1,
 					movement: 'bench',
 					sets: [
 						{
@@ -1409,8 +1409,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '1',
-					superset: '2',
+					order: 1,
+					superset: 2,
 					movement: 'row',
 					sets: [
 						{
@@ -1424,8 +1424,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '2',
-					superset: '1',
+					order: 2,
+					superset: 1,
 					movement: 'inclinePress',
 					sets: [
 						{
@@ -1439,8 +1439,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '2',
-					superset: '2',
+					order: 2,
+					superset: 2,
 					movement: 'pullUp',
 					sets: [
 						{
@@ -1452,8 +1452,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '3',
-					superset: '1',
+					order: 3,
+					superset: 1,
 					movement: 'dip',
 					sets: [
 						{
@@ -1465,8 +1465,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '3',
-					superset: '2',
+					order: 3,
+					superset: 2,
 					movement: 'curl',
 					sets: [
 						{
@@ -1482,10 +1482,10 @@ module.exports = {
 			]
 		},
 		{
-			day: '19',
+			day: 19,
 			exercises: [
 				{
-					order: '1',
+					order: 1,
 					movement: 'deadlift',
 					sets: [
 						{
@@ -1499,7 +1499,7 @@ module.exports = {
 					]
 				},
 				{
-					order: '2',
+					order: 2,
 					movement: 'frontSquat',
 					sets: [
 						{
@@ -1515,10 +1515,10 @@ module.exports = {
 			]
 		},
 		{
-			day: '20',
+			day: 20,
 			exercises: [
 				{
-					order: '1',
+					order: 1,
 					movement: 'bench',
 					sets: [
 						{
@@ -1532,8 +1532,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '2',
-					superset: '1',
+					order: 2,
+					superset: 1,
 					movement: 'strictPress',
 					sets: [
 						{
@@ -1547,8 +1547,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '3',
-					superset: '1',
+					order: 3,
+					superset: 1,
 					movement: 'chinUp',
 					sets: [
 						{
@@ -1560,8 +1560,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '3',
-					superset: '2',
+					order: 3,
+					superset: 2,
 					movement: 'ringDip',
 					sets: [
 						{
@@ -1573,8 +1573,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '4',
-					superset: '1',
+					order: 4,
+					superset: 1,
 					movement: 'lateralRaise',
 					sets: [
 						{
@@ -1588,8 +1588,8 @@ module.exports = {
 					]
 				},
 				{
-					order: '4',
-					superset: '2',
+					order: 4,
+					superset: 2,
 					movement: 'curl',
 					sets: [
 						{

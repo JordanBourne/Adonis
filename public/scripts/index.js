@@ -1,5 +1,5 @@
 (function() {
-    window.onload = function() {
-        runProgram.checkForProgram();
-    }
+	window.onload = function() {
+		runProgram.checkForProgram();
+	};
 })();

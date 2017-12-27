@@ -1,13 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const sharedMiddleware = require('../../middleware');
-const joi = require('joi');
-
-const getPrograms = require('./getPrograms');
+const getPrograms = require('./getPrograms.middleware');
 
 router
-    .post('/getPrograms',
-        getPrograms,
-        sharedMiddleware.success);
+	.post('/getPrograms',
+		getPrograms,
+		sharedMiddleware.success);
 
 module.exports = router;

@@ -17,8 +17,8 @@ var TestTable = vogels.define('TestTable', {
 
 vogels.createTables(function(err) {
   if (err) {
-    console.log('Error creating tables: ', err);
+	console.log('Error creating tables: ', err);
   } else {
-    console.log('Tables has been created');
+	console.log('Tables has been created');
   }
 });

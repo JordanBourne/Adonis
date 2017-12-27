@@ -12,8 +12,8 @@ module.exports = function(req, res, next) {
 
 		res.locals.output = {
 			programs: programs
-		}
+		};
 
-	    return next();
+		return next();
 	});
 };

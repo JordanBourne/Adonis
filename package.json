@@ -4,22 +4,27 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_PATH=./ mocha --recursive",
+	"test": "NODE_PATH=./ mocha --recursive"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "async": "^2.5.0",
-    "body-parser": "^1.18.2",
-    "chai": "^4.1.2",
-    "dotenv": "^4.0.0",
-    "express": "^4.15.3",
-    "lodash": "^4.17.4",
-    "request": "^2.83.0",
-    "sinon": "^3.2.1",
-    "vogels": "^2.2.0"
+	"async": "^2.5.0",
+	"body-parser": "^1.18.2",
+	"chai": "^4.1.2",
+	"dotenv": "^4.0.0",
+	"express": "^4.15.3",
+	"lodash": "^4.17.4",
+	"request": "^2.83.0",
+	"sinon": "^3.2.1",
+	"vogels": "^2.2.0"
   },
   "devDependencies": {
-    "mocha": "^3.5.0"
+	"eslint-config-standard": "^11.0.0-beta.0",
+	"eslint-plugin-import": "^2.8.0",
+	"eslint-plugin-node": "^5.2.1",
+	"eslint-plugin-promise": "^3.6.0",
+	"eslint-plugin-standard": "^3.0.1",
+	"mocha": "^3.5.0"
   }
 }

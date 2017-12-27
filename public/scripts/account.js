@@ -1,24 +1,34 @@
 var account = (function() {
-    return {
-        getProgram: function() {
-            return JSON.parse(localStorage.getItem('currentProgram'));
-        },
+	function downloadProgram(programName) {
+		httpRequest.get(`http://localhost:3000/v1/downloadProgram/${programName}`, (err, response) => {
+			if(err) {
+				console.log(err);
+			}
 
-        getTrainingMaxes: function() {
-            return JSON.parse(localStorage.getItem('trainingMaxes'));
-        },
+			const programData = response.data.programData;
+			localStorage.setItem('currentProgram', programData);
+			return programData;
+		});
+	}
 
-        selectProgram: function(program) {
-            localStorage.setItem('currentProgram', JSON.stringify(program));
-            runProgram.checkForProgram();
-        },
+	return {
+		getProgram: function() {
+			if(localStorage.getItem('currentProgram')) {
+				return JSON.parse(localStorage.getItem('currentProgram'));
+			}
+			return downloadProgram(localStorage.getItem('selectedProgram'));
+		},
 
-        saveMaxes: function(newMaxes) {
-            var currentMaxes = account.getTrainingMaxes() || {};
-            newMaxes.forEach((max) => {
-                currentMaxes[max.movement] = max.value;
-            });
-            localStorage.setItem('trainingMaxes', JSON.stringify(currentMaxes));
-        }
-    }
+		getTrainingMaxes: function() {
+			return JSON.parse(localStorage.getItem('trainingMaxes'));
+		},
+
+		saveMaxes: function(newMaxes) {
+			var currentMaxes = account.getTrainingMaxes() || {};
+			newMaxes.forEach((max) => {
+				currentMaxes[max.movement] = max.value;
+			});
+			localStorage.setItem('trainingMaxes', JSON.stringify(currentMaxes));
+		}
+	};
 })();
