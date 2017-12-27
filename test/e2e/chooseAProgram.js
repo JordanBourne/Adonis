@@ -1,19 +1,16 @@
 const assert = require('chai').assert;
 const expect = require('chai').expect;
-const sinon = require('sinon');
+// const sinon = require('sinon');
 const request = require('request');
 const _ = require('lodash');
 
 describe('ChooseAProgram::', function() {
 	let chosenProgram;
-	let sandbox;
 
 	beforeEach(function() {
-		sandbox = sinon.sandbox();
 	});
 
 	afterEach(() => {
-		sandbox.restore();
 	});
 
 	describe('Programs::', function() {

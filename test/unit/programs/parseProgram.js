@@ -19,40 +19,40 @@ describe('Programs::', function() {
 				});
 			});
 
-			describe('_getProgram', function(done) {
-				const parsedProgram = parseProgram.execute();
-				assert(parsedProgram);
-				expect(parsedProgram[0].movements).to.deep.equal([
-					{
-						setNumber: '1',
-						weight: '75',
-						weightType: 'relative',
-						reps: '5',
-						plusSet: false
-					}
-				]);
-				expect(parsedProgram[1].movements).to.deep.equal([
-					{
-						setNumber: '1',
-						weight: '75',
-						weightType: 'relative',
-						reps: '5',
-						plusSet: false
-					}
-				]);
-				return done();
+			describe('_getProgram', function() {
+				it('Should get a simple program', function(done) {
+					const parsedProgram = parseProgram.execute();
+					assert(parsedProgram, 'There should be a parsed program');
+					expect(parsedProgram[0].movements).to.deep.equal([
+						{
+							movement: 'bench',
+							setNumber: '1',
+							weight: '75',
+							weightType: 'relative',
+							reps: '5',
+							plusSet: false
+						}
+					]);
+					expect(parsedProgram[1].movements).to.deep.equal([
+						{
+							movement: 'squat',
+							setNumber: '1',
+							weight: '75',
+							weightType: 'relative',
+							reps: '5',
+							plusSet: false
+						}
+					]);
+					return done();
+				});
 			});
-			describe('_parseMovements', function(done) {
-				return done();
+			describe('_parseMovements', function() {
 			});
-			describe('_parseSet', function(done) {
-				return done();
+			describe('_parseSet', function() {
 			});
-			describe('_getNumberOfSets', function(done) {
-				return done();
+			describe('_getNumberOfSets', function() {
 			});
-			describe('_checkForRepeats', function(done) {
-				return done();
+			describe('_checkForRepeats', function() {
 			});
 		});
 	});

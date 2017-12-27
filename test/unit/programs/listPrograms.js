@@ -1,21 +1,16 @@
 const assert = require('chai').assert;
 const expect = require('chai').expect;
-const sinon = require('sinon');
+// const sinon = require('sinon');
 
 const ListPrograms = require('../../../sdk/programs').listPrograms;
 
-const mockPrograms = require('../../mocks/programs').programList;
-
-
 describe('Programs::', function() {
-	let sandbox;
+	// let sandbox;
 
 	beforeEach(function() {
-		sandbox = sinon.sandbox.create();
 	});
 
 	afterEach(function() {
-		sandbox.restore();
 	});
 
 	describe('ListPrograms::', function() {

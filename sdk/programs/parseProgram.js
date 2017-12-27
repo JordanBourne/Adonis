@@ -16,11 +16,13 @@ ParseProgram.prototype._getProgram = function() {
 			movements: this._parseMovements(workout)
 		};
 	});
+
+	return this.parsedProgram;
 };
 
 ParseProgram.prototype._parseMovements = function(workout) {
 	const todaysWorkout = [];
-	const totalExercises = _.last(workout.excercises).order;
+	const totalExercises = _.last(workout.exercises).order;
 	for(let exerciseNumber = 0; exerciseNumber < totalExercises; exerciseNumber++) {
 		todaysWorkout.push(this._parseSet(workout, exerciseNumber + 1));
 	}

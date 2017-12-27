@@ -1,10 +1,10 @@
-const sdk = require('../../sdk');
-const ListPrograms = sdk.programs.listPrograms;
+const sdk = require('../../../sdk');
+const DownloadProgram = sdk.programs.downloadProgram;
 
 module.exports = function(req, res, next) {
 	console.log(req.params);
 	return next();
-	// ListPrograms.create({
+	// DownloadProgram.create({
 	// 	filters: req.body.filters
 	// }).execute((err, programs) => {
 	// 	if(err) {

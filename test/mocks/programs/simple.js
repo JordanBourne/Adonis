@@ -25,7 +25,7 @@ module.exports = {
 			exercises: [
 				{
 					order: 1,
-					movement: 'Squat',
+					movement: 'squat',
 					sets: [
 						{
 							setNumber: '1',

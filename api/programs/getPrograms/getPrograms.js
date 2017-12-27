@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const sharedMiddleware = require('../../middleware');
+const sharedMiddleware = require('../../../middleware');
 const getPrograms = require('./getPrograms.middleware');
 
 router

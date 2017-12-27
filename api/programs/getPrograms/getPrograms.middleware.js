@@ -1,4 +1,4 @@
-const sdk = require('../../sdk');
+const sdk = require('../../../sdk');
 const ListPrograms = sdk.programs.listPrograms;
 
 module.exports = function(req, res, next) {
