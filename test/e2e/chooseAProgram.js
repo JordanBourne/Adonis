@@ -1,18 +1,10 @@
 const assert = require('chai').assert;
 const expect = require('chai').expect;
-// const sinon = require('sinon');
 const request = require('request');
 const _ = require('lodash');
 
 describe('ChooseAProgram::', function() {
 	let chosenProgram;
-
-	beforeEach(function() {
-	});
-
-	afterEach(() => {
-	});
-
 	describe('Programs::', function() {
 		describe('get', function() {
 			it('Should get ULULU split', function(done) {

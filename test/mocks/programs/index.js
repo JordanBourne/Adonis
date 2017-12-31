@@ -1,4 +1,5 @@
 module.exports = {
 	simple: require('./simple'),
-	programList: require('./programList')
+	programList: require('./programList'),
+	supersetRepeats: require('./supersetRepeats')
 };

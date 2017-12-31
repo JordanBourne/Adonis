@@ -4,7 +4,7 @@ var path = require('path');
 var routes = require('./api/routes');
 var bodyParser = require('body-parser');
 
-require('dotenv').config()
+require('dotenv').config();
 
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
@@ -21,4 +21,4 @@ app.use((err, req, res, next) => {
 
 app.listen(3000, function() {
 	console.log('hello world');
-})
+});

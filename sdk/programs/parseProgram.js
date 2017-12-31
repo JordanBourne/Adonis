@@ -1,7 +1,8 @@
 const _ = require('lodash');
 
 function ParseProgram(params) {
-	this.program = params.program;
+	this.program = Object.assign({}, params.program);
+	console.log(this.program);
 	this.parsedProgram = [];
 }
 
@@ -21,6 +22,8 @@ ParseProgram.prototype._getProgram = function() {
 };
 
 ParseProgram.prototype._parseMovements = function(workout) {
+	//Input: workout (tests/mocks/programs/simple.js).workouts[0]
+	//Output: Array of exercises for the day in sequence
 	const todaysWorkout = [];
 	const totalExercises = _.last(workout.exercises).order;
 	for(let exerciseNumber = 0; exerciseNumber < totalExercises; exerciseNumber++) {
@@ -30,6 +33,9 @@ ParseProgram.prototype._parseMovements = function(workout) {
 };
 
 ParseProgram.prototype._parseSet = function(workout, exerciseNumber) {
+	//Input: workout: (tests/mocks/programs/simple.js).workouts[0]
+	//Input: exerciseNumber: exercise[n].order
+	//Output: Array representing the first set of exercises
 	const currentExercises = _.filter(workout.exercises, {
 		order: exerciseNumber
 	});
@@ -51,6 +57,8 @@ ParseProgram.prototype._parseSet = function(workout, exerciseNumber) {
 };
 
 ParseProgram.prototype._getNumberOfSets = function(exercises) {
+	//Input: exercises: Exercises with order n from _parseSet
+	//Output: Number: Max set length within given exercises
 	let exerciseSets = [];
 	for(let i = 0; i < exercises.length; i++) {
 		exercises[i].sets = this._checkForRepeats(exercises[i].sets);
@@ -61,6 +69,8 @@ ParseProgram.prototype._getNumberOfSets = function(exercises) {
 };
 
 ParseProgram.prototype._checkForRepeats = function(sets) {
+	//Input: sets: sets array from given exercise
+	//Output: sets array with elements with repeat property repeated
 	const finalSets = [];
 	while(sets.length) {
 		const nextSet = sets.shift();
