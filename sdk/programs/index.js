@@ -1,3 +1,5 @@
 module.exports = {
-    listPrograms: require('./ListPrograms')
-}
+	downloadProgram: require('./downloadProgram'),
+	listPrograms: require('./listPrograms'),
+	parseProgram: require('./parseProgram')
+};

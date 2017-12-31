@@ -1,3 +1,3 @@
 module.exports = {
-    programs: require('./programs')
+	programs: require('./programs')
 };

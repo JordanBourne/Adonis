@@ -7,6 +7,7 @@ module.exports = {
 			exercises: [
 				{
 					order: 1,
+					superset: 1,
 					movement: 'bench',
 					sets: [
 						{
@@ -14,6 +15,22 @@ module.exports = {
 							weight: '75',
 							weightType: 'relative',
 							reps: '5',
+							repeat: 2,
+							plusSet: false
+						}
+					]
+				},
+				{
+					order: 1,
+					superset: 2,
+					movement: 'row',
+					sets: [
+						{
+							setNumber: '1',
+							weight: '75',
+							weightType: 'relative',
+							reps: '5',
+							repeat: 2,
 							plusSet: false
 						}
 					]

@@ -1,4 +1,4 @@
-const sdk = require('../../sdk');
+const sdk = require('../../../sdk');
 const ListPrograms = sdk.programs.listPrograms;
 
 module.exports = function(req, res, next) {
@@ -12,8 +12,8 @@ module.exports = function(req, res, next) {
 
 		res.locals.output = {
 			programs: programs
-		}
+		};
 
-	    return next();
+		return next();
 	});
 };
