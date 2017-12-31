@@ -1,8 +1,7 @@
 const _ = require('lodash');
 
 function ParseProgram(params) {
-	this.program = Object.assign({}, params.program);
-	console.log(this.program);
+	this.program = params.program;
 	this.parsedProgram = [];
 }
 

@@ -2,7 +2,7 @@ const assert = require('chai').assert;
 const expect = require('chai').expect;
 const request = require('request');
 
-describe.only('DownloadProgram::', function() {
+describe('DownloadProgram::', function() {
 	describe('Programs::', function() {
 		describe('get', function() {
 			it('Should get ULULU split runnable format', function(done) {

@@ -1,4 +1,6 @@
 const async = require('async');
+const _ = require('lodash');
+
 const testProgram = require('../../config/createProgram'); //replace with dynamoDB
 
 const dependencies = {
@@ -25,7 +27,7 @@ DownloadProgram.prototype.execute = function(callback) {
 
 DownloadProgram.prototype._getProgram = function(callback) {
 	//find the program from the database by using this.programName
-	this.program = testProgram;
+	this.program = _.cloneDeep(testProgram);
 	return callback();
 };
 
