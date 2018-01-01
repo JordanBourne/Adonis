@@ -1,14 +1,28 @@
+/*global httpRequest*/
 var account = (function() {
-	function downloadProgram(programName) {
-		httpRequest.get(`http://localhost:3000/v1/downloadProgram/${programName}`, (err, response) => {
+	function downloadProgram(programInfo) {
+		if(!programInfo) {
+			return;
+		}
+
+		httpRequest.get(`http://localhost:3000/v1/downloadProgram/${programInfo.name}`, (err, response) => {
 			if(err) {
 				console.log(err);
 			}
 
-			const programData = response.data.programData;
-			localStorage.setItem('currentProgram', programData);
+			const programData = response.data.program;
+			localStorage.setItem('currentProgram', JSON.stringify(programData));
 			return programData;
 		});
+	}
+
+	function saveProgramInfo(program) {
+		let programInformation = {
+			name: program.details.name,
+			day: 1
+		};
+		localStorage.setItem('programInformation', JSON.stringify(programInformation));
+		return programInformation;
 	}
 
 	return {
@@ -16,11 +30,21 @@ var account = (function() {
 			if(localStorage.getItem('currentProgram')) {
 				return JSON.parse(localStorage.getItem('currentProgram'));
 			}
-			return downloadProgram(localStorage.getItem('selectedProgram'));
+			return downloadProgram(localStorage.getItem('programInformation'));
 		},
 
 		getTrainingMaxes: function() {
 			return JSON.parse(localStorage.getItem('trainingMaxes'));
+		},
+
+		getCurrentDay: function() {
+			return JSON.parse(localStorage.getItem('programInformation')).day;
+		},
+
+		selectProgram: function(program) {
+			const programInformation = saveProgramInfo(program);
+
+			return downloadProgram(programInformation);
 		},
 
 		saveMaxes: function(newMaxes) {

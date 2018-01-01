@@ -2,7 +2,10 @@ const _ = require('lodash');
 
 function ParseProgram(params) {
 	this.program = params.program;
-	this.parsedProgram = [];
+	this.parsedProgram = {
+		name: params.program.details.name,
+		workouts: []
+	};
 }
 
 ParseProgram.prototype.execute = function() {
@@ -11,7 +14,7 @@ ParseProgram.prototype.execute = function() {
 
 ParseProgram.prototype._getProgram = function() {
 	this.program.workouts.forEach((workout) => {
-		this.parsedProgram[Number(workout.day) - 1] = {
+		this.parsedProgram.workouts[Number(workout.day) - 1] = {
 			day: workout.day,
 			movements: this._parseMovements(workout)
 		};
