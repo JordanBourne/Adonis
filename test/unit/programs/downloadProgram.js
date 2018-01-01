@@ -11,7 +11,7 @@ describe('Programs::', function() {
 					programName: 'ULULU Split'
 				}).execute((err, results) => {
 					assert(results, 'There should be a full program');
-					expect(results[0].movements.length).to.equal(22);
+					expect(results.workouts[0].movements.length).to.equal(22);
 					return done();
 				});
 			});

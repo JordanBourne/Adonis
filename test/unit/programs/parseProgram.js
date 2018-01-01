@@ -19,7 +19,7 @@ describe('Programs::', function() {
 					program: simpleProgram
 				}).execute();
 				assert(parsedProgram, 'There should be a parsed program');
-				expect(parsedProgram[0].movements).to.deep.equal([
+				expect(parsedProgram.workouts[0].movements).to.deep.equal([
 					{
 						movement: 'bench',
 						setNumber: '1',
@@ -29,7 +29,7 @@ describe('Programs::', function() {
 						plusSet: false
 					}
 				]);
-				expect(parsedProgram[1].movements).to.deep.equal([
+				expect(parsedProgram.workouts[1].movements).to.deep.equal([
 					{
 						movement: 'squat',
 						setNumber: '1',
@@ -46,7 +46,7 @@ describe('Programs::', function() {
 					program: supersetRepeats
 				}).execute();
 				assert(parsedProgram, 'There should be a parsed program');
-				expect(parsedProgram[0].movements).to.deep.equal([
+				expect(parsedProgram.workouts[0].movements).to.deep.equal([
 					{
 						movement: 'bench',
 						setNumber: '1',
