@@ -1,17 +1,18 @@
-/*global utility*/
+/*global account*/
 var workout = (function() {
 	let currentProgram;
 	let finishedSets = [];
 
 	function startWorkout(workout) {
-		currentProgram = workout.movements;
-		displayExercise(workout.movements.shift());
+		currentProgram = workout;
+		displayExercise(currentProgram.movements.shift());
 	}
 
 	function displayExercise(currentSet) {
 		finishedSets.push(currentSet);
 		document.getElementById('todaysWorkout').innerHTML = `
 			<h3> ${currentSet.movement} </h3>
+			Set Number: ${currentSet.setNumber} </br>
 			Weight: ${currentSet.weight} </br>
 			Reps: ${currentSet.reps} </br>
 			<button onClick="workout.finishSet()">Finish Set</button>
@@ -19,16 +20,19 @@ var workout = (function() {
 	}
 
 	function doNextExercise() {
-		if(currentProgram.length){
-			return displayExercise(currentProgram.shift());
+		if(currentProgram.movements.length){
+			return displayExercise(currentProgram.movements.shift());
 		} else {
-			return finishWorkout()
+			return finishWorkout();
 		}
 	}
 
 	function finishWorkout() {
-		console.log('Nice, you finished the full workout!');
-		console.log(finishedSets);
+		account.saveCompletedWorkout(finishedSets);
+		document.getElementById('todaysWorkout').innerHTML = `
+			<h3> You've finished day ${currentProgram.day}!</h3>
+			<button onClick="runProgram.startProgram()">Start Next Day</button>
+		`;
 	}
 
 	return {

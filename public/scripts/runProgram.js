@@ -19,10 +19,13 @@ var runProgram = (function() {
 	}
 
 	function getMissingMaxes(missingMaxes) {
+		if (document.getElementById('getMissingMaxes')) {
+			document.getElementById('getMissingMaxes').remove();
+		}
 		var inputFields = [];
 		inputFields.push(`
-			Please enter your max lifts for the workout today: <br />
-				<div id="getMissingMaxes">`);
+			<div id="getMissingMaxes">
+				Please enter your max lifts for the workout today: <br />`);
 		missingMaxes.forEach((missingMax) => {
 			var movementName = utility.nameCase(missingMax);
 			inputFields.push(`${movementName}: <input type="number" id="${missingMax}" required></input>`);
@@ -44,7 +47,7 @@ var runProgram = (function() {
 			}
 		},
 
-		startProgram: function() { //start here on new refactor
+		startProgram: function() {
 			var program = account.getProgram();
 			var currentDay = account.getCurrentDay();
 			var todaysWorkout = findTodaysWorkout(program, currentDay);
