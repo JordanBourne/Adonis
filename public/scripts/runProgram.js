@@ -1,15 +1,15 @@
+/*global account utility workout*/
 var runProgram = (function() {
-	function findTodaysWorkout(program) {
-		var currentDay = program.currentDay || 1;
+	function findTodaysWorkout(program, currentDay) {
 		return program.workouts.find((dailyWorkout) => {
-			return dailyWorkout.day === String(currentDay);
+			return dailyWorkout.day === currentDay;
 		});
 	}
 
 	function checkMissingMaxes(todaysWorkout) {
 		var trainingMaxes = account.getTrainingMaxes() || {};
 		var missingMaxes = [];
-		todaysWorkout.exercises.forEach((exercise) => {
+		todaysWorkout.movements.forEach((exercise) => {
 			if(!trainingMaxes[exercise.movement] && !missingMaxes.includes(exercise.movement)) {
 				missingMaxes.push(exercise.movement);
 			}
@@ -19,10 +19,13 @@ var runProgram = (function() {
 	}
 
 	function getMissingMaxes(missingMaxes) {
+		if (document.getElementById('getMissingMaxes')) {
+			document.getElementById('getMissingMaxes').remove();
+		}
 		var inputFields = [];
 		inputFields.push(`
-			Please enter your max lifts for the workout today: <br />
-				<div id="getMissingMaxes">`);
+			<div id="getMissingMaxes">
+				Please enter your max lifts for the workout today: <br />`);
 		missingMaxes.forEach((missingMax) => {
 			var movementName = utility.nameCase(missingMax);
 			inputFields.push(`${movementName}: <input type="number" id="${missingMax}" required></input>`);
@@ -33,25 +36,21 @@ var runProgram = (function() {
 		utility.addToElement('programBody', inputFields.join(' <br />'));
 	}
 
-	function checkForProgram() {
-		var currentProgram = account.getProgram();
-		if (currentProgram) {
-			document.getElementById('programBody').innerHTML = `
-				<h1> ${currentProgram.details.name} </h1>
-				<button onClick="runProgram.startProgram()">Start Next Workout</button>
-			`;
-		}
-	}
-
 	return {
-		selectProgram: function(program) {
-			localStorage.setItem('selectedProgram', program.details.name);
-			checkForProgram();
+		checkForProgram: function() {
+			var currentProgram = account.getProgram();
+			if (currentProgram) {
+				document.getElementById('programBody').innerHTML = `
+					<h1> ${currentProgram.name} </h1>
+					<button onClick="runProgram.startProgram()">Start Next Workout</button>
+				`;
+			}
 		},
 
-		startProgram: function() { //start here on new refactor
+		startProgram: function() {
 			var program = account.getProgram();
-			var todaysWorkout = findTodaysWorkout(program);
+			var currentDay = account.getCurrentDay();
+			var todaysWorkout = findTodaysWorkout(program, currentDay);
 			var missingMaxes = checkMissingMaxes(todaysWorkout);
 			if(missingMaxes.length) {
 				getMissingMaxes(missingMaxes);

@@ -1,13 +1,15 @@
+/*global account utility httpRequest runProgram*/
+
 var programList = (function() {
 	function showPrograms(programs) {
-		var programList = document.createElement('div');
+		var listOfPrograms = document.createElement('div');
 		programs.forEach(function(program) {
 			var btn = utility.createButton(program.details.name, function() {
 				displayProgramDetails(program);
 			});
-			programList.appendChild(btn);
+			listOfPrograms.appendChild(btn);
 		});
-		utility.replaceElements(document.getElementById('programList'), programList);
+		utility.replaceElements(document.getElementById('programList'), listOfPrograms);
 	}
 
 	function displayProgramDetails(program) {
@@ -19,7 +21,7 @@ var programList = (function() {
 			Movements:  ${program.details.movements.join(', ')} <br />
 		`;
 		var btn = utility.createButton('Choose Program', function() {
-			account.selectProgram(program)
+			account.selectProgram(program);
 		});
 		programDetails.appendChild(btn);
 		utility.replaceElements(document.getElementById('programDetails'), programDetails);

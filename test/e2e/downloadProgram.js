@@ -16,7 +16,7 @@ describe('DownloadProgram::', function() {
 					expect(body.success).to.equal(true);
 					expect(body.data.program.length).to.equal(20);
 					for(let i = 0; i < 20; i++) {
-						expect(body.data.program[i].movements.length).to.be.greaterThan(0);
+						expect(body.data.program.workouts[i].movements.length).to.be.greaterThan(0);
 					}
 					done();
 				});

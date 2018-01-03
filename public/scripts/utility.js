@@ -8,7 +8,7 @@ var utility = (function() {
 	return {
 		addToElement: function(originalElementName, elementToAdd) {
 			var originalElement = document.getElementById(originalElementName);
-			var newElement = document.createElement('div')
+			var newElement = document.createElement('div');
 			newElement.innerHTML = elementToAdd;
 			originalElement.appendChild(newElement);
 		},

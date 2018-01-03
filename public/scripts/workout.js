@@ -1,90 +1,47 @@
+/*global account*/
 var workout = (function() {
-	var currentWorkout;
+	let currentProgram;
+	let finishedSets = [];
 
-	function initWorkout(program) {
-		currentWorkout = program;
-		currentWorkout.exerciseNumber = 1;
-		currentWorkout.setNumber = 1;
-		displayOverview();
+	function startWorkout(workout) {
+		currentProgram = workout;
+		displayExercise(currentProgram.movements.shift());
 	}
 
-	function displayOverview() {
-		var todaysOverview = document.createElement('div');
-		var todaysMovements = [];
-		currentWorkout.exercises.forEach((exercise) => {
-			todaysMovements.push(utility.nameCase(exercise.movement));
-		});
-		todaysOverview.innerHTML = `
-			<h2> Day ${currentWorkout.day} </h2>
-			<p id="workout">
-				<h3> Overview: </h3>
-				${todaysMovements.join('<br />')} <br />
-				<button onclick="workout.startWorkout()">Start Workout</button>
-			</p>
+	function displayExercise(currentSet) {
+		finishedSets.push(currentSet);
+		document.getElementById('todaysWorkout').innerHTML = `
+			<h3> ${currentSet.movement} </h3>
+			Set Number: ${currentSet.setNumber} </br>
+			Weight: ${currentSet.weight} </br>
+			Reps: ${currentSet.reps} </br>
+			<button onClick="workout.finishSet()">Finish Set</button>
 		`;
-		utility.replaceElements(document.getElementById('todaysWorkout'), todaysOverview);
 	}
 
-	function startNextExercise() {
-		currentWorkout.supersetNumber = 1;
-		var nextExercises = getNextExercises();
-		var currentExercise = getCurrentExercise(nextExercises);
-		var currentSet = getCurrentSet(currentExercise);
-
-		if(currentSet) {
-			return currentSet();
+	function doNextExercise() {
+		if(currentProgram.movements.length){
+			return displayExercise(currentProgram.movements.shift());
+		} else {
+			return finishWorkout();
 		}
 	}
 
-	function getNextExercises() {
-		return currentWorkout.exercises.filter((exercise) => {
-			return exercise.order == currentWorkout.exerciseNumber;
-		});
-	}
-
-	function getCurrentExercise(nextExercises) {
-		return nextExercises.find((exercise) => {
-			if(exercise.superset && exercise.superset != currentWorkout.supersetNumber) {
-				return false;
-			}
-			var setIndex = currentWorkout.setNumber - 1;
-			if(exercise.sets[setIndex]) {
-				return true;
-			}
-			return false;
-		});
-	}
-
-	function getCurrentSet(currentExercise) {
-		return currentExercise.sets.find((thisSet) => {
-			return thisSet.setNumber == currentWorkout.setNumber;
-		});
+	function finishWorkout() {
+		account.saveCompletedWorkout(finishedSets);
+		document.getElementById('todaysWorkout').innerHTML = `
+			<h3> You've finished day ${currentProgram.day}!</h3>
+			<button onClick="runProgram.startProgram()">Start Next Day</button>
+		`;
 	}
 
 	return {
-		init: function(program) {
-			initWorkout(program);
+		init: function(workout) {
+			startWorkout(workout);
 		},
 
-		startWorkout: function() {
-			startNextExercise();
+		finishSet: function() {
+			doNextExercise();
 		}
 	};
-	/*
-	Front End:
-	Find workout for the day
-	Start at set 0
-	Increment set number until finished
-
-	Back End:
-	Find exercises with order number 1
-		Add first exercise of superset to workoutArray
-		Increment superset number until no more workouts
-		Add second exercise of superset to workoutArray
-		Increment superset......
-	Find exercises with order number 2
-		...
-
-
-	*/
 })();
