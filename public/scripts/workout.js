@@ -13,7 +13,7 @@ var workout = (function() {
 		document.getElementById('todaysWorkout').innerHTML = `
 			<h3> ${currentSet.movement} </h3>
 			Set Number: ${currentSet.setNumber} </br>
-			Weight: ${currentSet.weight} </br>
+			${(currentSet.weight ? `Weight: ${currentSet.weight} </br>` : '')}
 			Reps: ${currentSet.reps} </br>
 			<button onClick="workout.finishSet()">Finish Set</button>
 		`;

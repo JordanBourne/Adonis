@@ -42,7 +42,7 @@ var runProgram = (function() {
 			if (currentProgram) {
 				document.getElementById('programBody').innerHTML = `
 					<h1> ${currentProgram.name} </h1>
-					<button onClick="runProgram.startProgram()">Start Next Workout</button>
+					<a href="workout.html"><button>Start Next Workout</button></a>
 				`;
 			}
 		},
