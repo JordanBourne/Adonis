@@ -3,7 +3,7 @@
 	let currentProgram;
 
 	function writeHeader() {
-		document.getElementById("header").innerHTML = currentProgram.name;
+		document.getElementById('header').innerHTML = currentProgram.name;
 	}
 
 	window.onload = function() {
