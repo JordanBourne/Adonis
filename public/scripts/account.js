@@ -41,6 +41,10 @@ var account = (function() {
 			return JSON.parse(localStorage.getItem('programInformation')).day;
 		},
 
+		getRecommendedProgram: function() {
+			return JSON.parse(localStorage.getItem('recommendedProgram'));
+		},
+
 		incrementDay: function() {
 			let currentInfo = JSON.parse(localStorage.getItem('programInformation'));
 			currentInfo.day++;
@@ -64,7 +68,7 @@ var account = (function() {
 					workouts: [completedWorkout]
 				};
 			}
-			
+
 			account.incrementDay();
 			return localStorage.setItem('completedWorkouts', JSON.stringify(completedWorkouts));
 		},

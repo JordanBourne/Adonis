@@ -37,6 +37,26 @@ var programList = (function() {
 				const programs = response.data.programs;
 				return showPrograms(programs);
 			});
+		},
+
+		findRecommendedProgram: function(params) {
+			setTimeout(function() {
+				return account.setRecommendedProgram({
+					'name': 'ULULU Split'
+				});
+			}, 1000)
+			// httpRequest.post('http://localhost:3000/v1/getRecommendedPrograms', {
+			// 	daysPerWeek: params.days,
+			// 	experienceLevel: params.experienceLevel || 'beginner',
+			// 	goal: params.goal
+			// }, function(err, response) {
+			// 	if(err) {
+			// 		return console.log(err);
+			// 	}
+            //
+			// 	const program = response.data.program;
+			// 	return account.setRecommendedProgram(program);
+			// });
 		}
 	};
 })();
