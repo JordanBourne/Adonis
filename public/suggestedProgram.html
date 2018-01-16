@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="css/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css">
+		<link rel="stylesheet" type="text/css" href="css/global.css">
+		<link rel="stylesheet" type="text/css" href="css/suggestedProgram.css">
+	</head>
+	<body>
+		<!-- <div id="demo">
+			<h2 id="header">Get Programs</h2>
+			<button type="button" onclick="programList.getPrograms()">Get Programs!</button>
+		</div>
+
+		<div id="programList"></div>
+		<div id="programDetails"></div>
+		<div id="programBody"></div>
+		<div id="todaysWorkout"></div> -->
+		<div class="standardGrid" id="recommendedProgram">
+			<h1 class="spSubheader centerContent" id="programTopPick">
+				Your Top Pick
+			</h1>
+			<h2 class="spFormHeader centerContent" id="programTitle">
+				ULULU Split
+			</h2>
+
+			<div class="spProgramOverview" id="programOverview">
+				<div class="spProgramItem" id="programDays">
+					<span class="spProgramOverviwTitle">Days</span><br />
+					4
+				</div>
+				<div class="spProgramItem" id="programFocus">
+					<span class="spProgramOverviwTitle">Focus</span><br />
+					Look Better
+				</div>
+				<div class="spProgramItem" id="programExperience">
+					<span class="spProgramOverviwTitle">Experience</span><br />
+					Beginner
+				</div>
+			</div>
+
+			<div class="spProgramDetails" id="programDetails">
+				More Information <i class="fa fa-info-circle chevronSizing" aria-hidden="true"></i>
+			</div>
+
+			<div class="spProgramButtonArea" id="programButtonArea">
+				<div class="spButton centerContent" id="chooseProgram">
+					<div>
+						Choose Program
+						<i class="fa fa-chevron-right chevronSizing mainArrow" aria-hidden="true"></i>
+					</div>
+				</div>
+				<div class="spButton centerContent" id="browseAll">
+					<div>
+						Browse All
+						<i class="fa fa-chevron-right chevronSizing" aria-hidden="true"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<template id="newUserPrompt">
+			<div class="standardGrid" id="questionnaire">
+				<h1 class="spFormHeader centerContent" id="questionnaireTitle">
+					Welcome
+				</h1>
+				<p class="spWelcomeText">
+					To recommend a program we first need to a little about your goals.
+					These answers can be changed at any time.
+				</p>
+
+				<h2 class="spQuestionTitle centerContent" id="yourGoal">Your Goal</h2>
+				<div class="spQuestionAnswer" id="lookBetter">
+					<span class="spQuestionText">Look Better</span>
+				</div>
+				<div class="spQuestionAnswer" id="getStronger">
+					<span class="spQuestionText">Get Stronger</span>
+				</div>
+
+				<h2 class="spQuestionTitle centerContent" id="daysPerWeek">Days Per Week</h2>
+				<div class="spQuestionAnswer centerContent" id="numberOfDays">
+					<span class="spQuestionText">2</span>
+					<span class="spQuestionText">3</span>
+					<span class="spQuestionText">4</span>
+					<span class="spQuestionText">5</span>
+					<span class="spQuestionText">6</span>
+					<span class="spQuestionText">7</span>
+				</div>
+
+				<div class="spButton" id="aboutContinue">
+					Continue
+					<i class="fa fa-chevron-right chevronSizing" aria-hidden="true"></i>
+				</div>
+			</div>
+		</template>
+
+		<template id="suggestedProgram">
+		</template>
+
+		<!-- <script src="scripts/utility.js"></script>
+		<script src="scripts/httpClient.js"></script>
+		<script src="scripts/programList.js"></script>
+		<script src="scripts/runProgram.js"></script>
+		<script src="scripts/workout.js"></script>
+		<script src="scripts/account.js"></script>
+		<script src="scripts/homePage.js"></script> -->
+	</body>
+</html>

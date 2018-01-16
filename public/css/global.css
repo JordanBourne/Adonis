@@ -9,3 +9,24 @@ html, body {
 :root {
 	--orange-1: #bc642d;
 }
+
+.centerContent {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.chevronSizing {
+	font-size: .8em;
+}
+
+.standardGrid {
+	display: grid;
+	height: 100%;
+	width: 100%;
+	grid-template: repeat(10, 1fr) / repeat(6, 1fr);
+}
+
+.mainArrow {
+	color: var(--orange-1);
+}

@@ -33,15 +33,6 @@
 	width: 100%;
 }
 
-.splashArrow {
-	font-size: .8em;
-}
-
-.splashMainArrow {
-	color: var(--orange-1);
-	font-size: .8em;
-}
-
 .fakeArrow {
 	color: white;
 }
