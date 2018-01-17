@@ -2,9 +2,9 @@
 <html>
 	<head>
 		<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet" type="text/css">
-		<link rel="stylesheet" type="text/css" href="css/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css">
-		<link rel="stylesheet" type="text/css" href="css/global.css">
-		<link rel="stylesheet" type="text/css" href="css/suggestedProgram.css">
+		<link rel="stylesheet" type="text/css" href="../global/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css">
+		<link rel="stylesheet" type="text/css" href="../global/global.css">
+		<link rel="stylesheet" type="text/css" href="suggestedProgram.css">
 	</head>
 	<body>
 		<!-- <div id="demo">
@@ -16,7 +16,7 @@
 		<div id="programDetails"></div>
 		<div id="programBody"></div>
 		<div id="todaysWorkout"></div> -->
-		<template id="recommendProgram">
+		<template id="suggestedProgram">
 			<div class="standardGrid" id="recommendedProgram">
 				<h1 class="spSubheader centerContent" id="programTopPick">
 					Your Top Pick
@@ -88,21 +88,21 @@
 					<span class="spQuestionText">7</span>
 				</div>
 
-				<div class="spButton centerContent" id="aboutContinue">
-					<div>
-						Continue
-						<i class="fa fa-chevron-right chevronSizing" aria-hidden="true"></i>
+				<div id="aboutContinue">
+					<div class="spButton centerContent" id="continueButton">
+						<div onclick="suggestedProgram.setProgramPreferences()">
+							Continue
+							<i class="fa fa-chevron-right chevronSizing" aria-hidden="true"></i>
+						</div>
 					</div>
 				</div>
 			</div>
 		</template>
 
-		<script src="scripts/utility.js"></script>
-		<script src="scripts/httpClient.js"></script>
-		<!-- <script src="scripts/programList.js"></script>
-		<script src="scripts/runProgram.js"></script> -->
-		<script src="scripts/workout.js"></script>
-		<script src="scripts/account.js"></script>
-		<script src="scripts/suggestedProgram.js"></script>
+		<script src="../utility.js"></script>
+		<script src="../httpClient.js"></script>
+		<script src="../program/programList.js"></script>
+		<script src="../account.js"></script>
+		<script src="suggestedProgram.js"></script>
 	</body>
 </html>

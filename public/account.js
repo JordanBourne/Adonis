@@ -83,6 +83,10 @@ var account = (function() {
 
 		selectedProgramName: function() {
 			return JSON.parse(localStorage.getItem('programInformation')).name;
+		},
+
+		setRecommendedProgram: function(program) {
+			return localStorage.setItem('recommendedProgram', JSON.stringify(program));
 		}
 	};
 })();

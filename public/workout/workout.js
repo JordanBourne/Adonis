@@ -3,6 +3,15 @@ var workout = (function() {
 	let currentProgram;
 	let finishedSets = [];
 
+	window.onload = function() {
+		currentProgram = account.getProgram();
+		writeHeader();
+	};
+
+	function writeHeader() {
+		document.getElementById('header').innerHTML = currentProgram.name;
+	}
+
 	function startWorkout(workout) {
 		currentProgram = workout;
 		displayExercise(currentProgram.movements.shift());
