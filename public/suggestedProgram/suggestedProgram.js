@@ -1,4 +1,4 @@
-/*global account programList*/
+/*global account programList utility*/
 var suggestedProgram = (function() {
 	window.onload = function() {
 		checkProgramPreferences();
@@ -16,12 +16,13 @@ var suggestedProgram = (function() {
 	}
 
 	function appendRecommendProgram(program) {
-		document.body.appendChild(document.getElementById('suggestedProgram').content.cloneNode(true));
+		utility.replaceElements(document.body, document.getElementById('suggestedProgram').content.cloneNode(true));
 		document.getElementById('programTitle').innerHTML = program.name;
 		return;
 	}
 
 	function getCurrentPreferences() {
+		//get selected preferences from the DOM
 		return {
 			daysPerWeek: 5,
 			goal: 'Look Better'
@@ -37,6 +38,18 @@ var suggestedProgram = (function() {
 				}
 
 				return appendRecommendProgram(program);
+			});
+		},
+
+		selectProgram: function() {
+			const recommendedProgram = account.getRecommendedProgram();
+
+			programList.selectProgram(recommendedProgram, (err) => {
+				if(err) {
+					console.log(err);
+				}
+
+				window.location.href = '../workout/workout.html';
 			});
 		}
 	};

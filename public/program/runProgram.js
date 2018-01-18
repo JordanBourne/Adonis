@@ -38,7 +38,7 @@ var runProgram = (function() {
 
 	return {
 		checkForProgram: function() {
-			var currentProgram = account.getProgram();
+			var currentProgram = programList.getProgram();
 			if (currentProgram) {
 				document.getElementById('programBody').innerHTML = `
 					<h1> ${currentProgram.name} </h1>
@@ -48,7 +48,7 @@ var runProgram = (function() {
 		},
 
 		startProgram: function() {
-			var program = account.getProgram();
+			var program = programList.getProgram();
 			var currentDay = account.getCurrentDay();
 			var todaysWorkout = findTodaysWorkout(program, currentDay);
 			var missingMaxes = checkMissingMaxes(todaysWorkout);

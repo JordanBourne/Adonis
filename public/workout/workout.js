@@ -4,7 +4,7 @@ var workout = (function() {
 	let finishedSets = [];
 
 	window.onload = function() {
-		currentProgram = account.getProgram();
+		currentProgram = programList.getProgram();
 		writeHeader();
 	};
 

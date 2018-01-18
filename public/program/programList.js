@@ -1,6 +1,25 @@
 /*global account utility httpRequest runProgram*/
-
 var programList = (function() {
+	function downloadProgram(programInfo) {
+		if(!programInfo) {
+			return;
+		}
+
+		httpRequest.get(`http://localhost:3000/v1/downloadProgram/${programInfo.name}`, (err, response) => {
+			if(err) {
+				console.log(err);
+			}
+
+			const programData = response.data.program;
+			localStorage.setItem('currentProgram', JSON.stringify(programData));
+			return programData;
+		});
+	}
+
+	function saveSelectedProgram(program) {
+		return localStorage.setItem('selectedProgram', JSON.stringify(program));
+	}
+
 	// function showPrograms(programs) {
 	// 	var listOfPrograms = document.createElement('div');
 	// 	programs.forEach(function(program) {
@@ -38,6 +57,12 @@ var programList = (function() {
 		// 		return showPrograms(programs);
 		// 	});
 		// },
+		getProgram: function() {
+			if(localStorage.getItem('currentProgram')) {
+				return JSON.parse(localStorage.getItem('currentProgram'));
+			}
+			return downloadProgram(localStorage.getItem('programInformation'));
+		},
 
 		findRecommendedProgram: function(params, callback) {
 			setTimeout(function() {
@@ -47,7 +72,7 @@ var programList = (function() {
 				account.setRecommendedProgram(program);
 
 				return callback(null, program);
-			}, 1000)
+			}, 1000);
 			// httpRequest.post('http://localhost:3000/v1/getRecommendedPrograms', {
 			// 	daysPerWeek: params.days,
 			// 	experienceLevel: params.experienceLevel || 'beginner',
@@ -60,6 +85,13 @@ var programList = (function() {
 			// 	const program = response.data.program;
 			// 	return account.setRecommendedProgram(program);
 			// });
+		},
+
+		selectProgram: function(program, callback = function() {}) {
+			saveSelectedProgram(program);
+			downloadProgram(program);
+
+			return callback();
 		}
 	};
 })();
