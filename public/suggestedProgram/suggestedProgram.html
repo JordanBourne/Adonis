@@ -7,15 +7,6 @@
 		<link rel="stylesheet" type="text/css" href="suggestedProgram.css">
 	</head>
 	<body>
-		<!-- <div id="demo">
-			<h2 id="header">Get Programs</h2>
-			<button type="button" onclick="programList.getPrograms()">Get Programs!</button>
-		</div>
-
-		<div id="programList"></div>
-		<div id="programDetails"></div>
-		<div id="programBody"></div>
-		<div id="todaysWorkout"></div> -->
 		<template id="suggestedProgram">
 			<div class="standardGrid" id="recommendedProgram">
 				<h1 class="spSubheader centerContent" id="programTopPick">
@@ -44,13 +35,13 @@
 				</div>
 
 				<div class="spProgramButtonArea" id="programButtonArea">
-					<div class="spButton centerContent" id="chooseProgram">
+					<div class="bottonNavButton centerContent" id="chooseProgram">
 						<div onclick="suggestedProgram.selectProgram()">
 							Choose Program
 							<i class="fa fa-chevron-right chevronSizing mainArrow" aria-hidden="true"></i>
 						</div>
 					</div>
-					<div class="spButton centerContent" id="browseAll">
+					<div class="bottonNavButton centerContent" id="browseAll">
 						<div>
 							Browse All
 							<i class="fa fa-chevron-right chevronSizing" aria-hidden="true"></i>
@@ -89,7 +80,7 @@
 				</div>
 
 				<div id="aboutContinue">
-					<div class="spButton centerContent" id="continueButton">
+					<div class="bottonNavButton centerContent" id="continueButton">
 						<div onclick="suggestedProgram.setProgramPreferences()">
 							Continue
 							<i class="fa fa-chevron-right chevronSizing" aria-hidden="true"></i>

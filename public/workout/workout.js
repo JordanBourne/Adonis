@@ -1,15 +1,19 @@
-/*global account*/
+/*global account programList*/
 var workout = (function() {
 	let currentProgram;
+	let programInformation;
 	let finishedSets = [];
 
 	window.onload = function() {
 		currentProgram = programList.getProgram();
-		writeHeader();
+		programInformation = account.getSelectedProgram();
+		fillProgramDetails();
 	};
 
-	function writeHeader() {
-		document.getElementById('header').innerHTML = currentProgram.name;
+	function fillProgramDetails() {
+		document.getElementById('workoutTitle').innerHTML = currentProgram.name;
+		document.getElementById('workoutDay').innerHTML = `Day ${programInformation.day}`;
+		document.getElementById('workoutDescription').innerHTML = programInformation.decription || "Today will be a workout where we focus on doing things and getting stronger";
 	}
 
 	function startWorkout(workout) {

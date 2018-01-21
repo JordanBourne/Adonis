@@ -15,11 +15,15 @@ var account = (function() {
 		},
 
 		getCurrentDay: function() {
-			return JSON.parse(localStorage.getItem('programInformation')).day;
+			return JSON.parse(localStorage.getItem('selectedProgram')).day;
 		},
 
 		getRecommendedProgram: function() {
 			return JSON.parse(localStorage.getItem('recommendedProgram'));
+		},
+
+		getSelectedProgram: function() {
+			return JSON.parse(localStorage.getItem('selectedProgram'));
 		},
 
 		incrementDay: function() {
@@ -59,7 +63,7 @@ var account = (function() {
 		},
 
 		selectedProgramName: function() {
-			return JSON.parse(localStorage.getItem('programInformation')).name;
+			return JSON.parse(localStorage.getItem('selectedProgram')).name;
 		},
 
 		setRecommendedProgram: function(program) {

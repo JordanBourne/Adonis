@@ -1,0 +1,51 @@
+.workoutTitle {
+	margin: 0px;
+	padding: 0px;
+	font-size: 7em;
+}
+
+.workoutDay {
+	margin: 0px;
+	padding: 0px;
+	font-size: 5em;
+}
+
+.workoutDescription {
+	margin: 0px;
+	padding-left: 10%;
+	padding-right: 10%;
+	font-size: 3em;
+}
+
+.workoutOverviewButtons {
+	display: grid;
+	grid-template-rows: 15% 35% 35% 15%;
+}
+
+.skipWorkout {
+	font-size: 3em;
+}
+
+#workoutTitle {
+	grid-area: 2 / 1 / span 1 / span 6;
+}
+
+#workoutDay {
+	grid-area: 4 / 1 / span 1 / span 6;
+}
+
+#workoutDescription {
+	grid-area: 5 / 1 / span 2 / span 6;
+}
+
+#startWorkoutButtonArea {
+	grid-area: 8 / 1 / span 3 / span 6;
+}
+
+#startWorkout {
+	grid-row-start: 2;
+}
+
+#skipWorkout {
+	grid-row-start: 3;
+}

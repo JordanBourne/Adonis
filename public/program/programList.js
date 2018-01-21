@@ -17,6 +17,7 @@ var programList = (function() {
 	}
 
 	function saveSelectedProgram(program) {
+		program.day = 1;
 		return localStorage.setItem('selectedProgram', JSON.stringify(program));
 	}
 
@@ -61,7 +62,7 @@ var programList = (function() {
 			if(localStorage.getItem('currentProgram')) {
 				return JSON.parse(localStorage.getItem('currentProgram'));
 			}
-			return downloadProgram(localStorage.getItem('programInformation'));
+			return downloadProgram(localStorage.getItem('selectedProgram'));
 		},
 
 		findRecommendedProgram: function(params, callback) {
