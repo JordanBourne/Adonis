@@ -10,6 +10,13 @@ html, body {
 	--orange-1: #bc642d;
 }
 
+.templateBody {
+    height: 100%;
+	width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 .centerContent {
 	display: flex;
 	align-items: center;

@@ -1,4 +1,4 @@
-/*global account utility httpRequest runProgram*/
+/*global account utility httpRequest*/
 var programList = (function() {
 	function downloadProgram(programInfo) {
 		if(!programInfo) {
