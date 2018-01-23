@@ -34,11 +34,17 @@ html, body {
 	grid-template: repeat(10, 1fr) / repeat(6, 1fr);
 }
 
+.standardFlex {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+}
+
 .mainArrow {
 	color: var(--orange-1);
 }
 
-.bottonNavButton {
+.bottomNavButton {
 	display: flex;
 	align-items: center;
 	font-size: 4em;
@@ -48,6 +54,6 @@ html, body {
 	cursor: pointer;
 }
 
-.bottonNavButton:active {
+.bottomNavButton:active {
 	background-color: #bababa;
 }

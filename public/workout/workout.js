@@ -63,7 +63,7 @@ var workout = (function() {
 			Set Number: ${currentSet.setNumber} </br>
 			${(currentSet.weight ? `Weight: ${currentSet.weight} </br>` : '')}
 			Reps: ${currentSet.reps} </br>
-			<button onClick="workout.finishSet()">Finish Set</button>
+			<button onClick=".finishSet()">Finish Set</button>
 		`;
 	}
 
@@ -98,7 +98,7 @@ var workout = (function() {
 
 		saveMaxes: function() {
 			var missingMaxes = [];
-			var maxesInputContainer = document.getElementById('getMissingMaxes');
+			var maxesInputContainer = document.getElementById('maxesMovements');
 			var inputFields = Array.from(maxesInputContainer.getElementsByTagName('input'));
 			inputFields.forEach((element) => {
 				if(!missingMaxes.includes(`${element.id}`) && element.type === 'number') {
