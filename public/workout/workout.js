@@ -118,6 +118,10 @@ var workout = (function() {
 
 		finishSet: function() {
 			doNextExercise();
+		},
+
+		expandSection: function(theThing) {
+			console.log(theThing);
 		}
 	};
 })();

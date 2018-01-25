@@ -71,29 +71,52 @@
 		<!-- TEMPLATE FOR WORKOUT SET -->
 		<template id="overviewTemplate">
 			<div class="standardFlex movementOverview" id="movementOverview">
-				<div class="superSetContainer">
-					<div class="superSetMovement">
-							<h3 class="movementName">Bench</h3>
+				<div class="movementSetContainer" onclick="workout.expandSection(this)">
+					<div class="movementHeader">
+						<h3 class="movementName">Bench</h3>
+						<div class="movementExpand">
+							<i class="fa fa-chevron-down movementExpand" aria-hidden="true"></i>
+						</div>
 					</div>
 				</div>
-				<div class="superSetContainer">
-					<div class="superSetMovement">
+				<div class="movementSetContainer">
+					<div class="movementHeader">
 						<h3 class="movementName">Row</h3>
+						<div class="movementExpand">
+							<i class="fa fa-chevron-down movementExpand" aria-hidden="true"></i>
+						</div>
 					</div>
 				</div>
-				<div class="superSetContainer">
-					<div class="superSetMovement">
+				<div class="movementSetContainer">
+					<div class="movementHeader">
 						<h3 class="movementName">Overhead Press</h3>
+						<div class="movementExpand">
+							<i class="fa fa-chevron-down movementExpand" aria-hidden="true"></i>
+						</div>
 					</div>
 				</div>
-				<div class="superSetContainer">
-					<div class="superSetMovement">
+				<div class="movementSetContainer">
+					<div class="movementHeader">
 						<h3 class="movementName">Pull Up</h3>
+						<div class="movementExpand">
+							<i class="fa fa-chevron-down movementExpand" aria-hidden="true"></i>
+						</div>
 					</div>
 				</div>
-				<div class="regularSetContainer">
-					<div class="regularMovement">
-						<h3 class="movementName">Rope Pull</h3>
+				<div class="movementSetContainer">
+					<div class="movementHeader">
+						<h3 class="movementName">Curl</h3>
+						<div class="movementExpand">
+							<i class="fa fa-chevron-down movementExpand" aria-hidden="true"></i>
+						</div>
+					</div>
+				</div>
+				<div class="movementSetContainer">
+					<div class="movementHeader">
+						<h3 class="movementName">Tricep Pushdown</h3>
+						<div class="movementExpand">
+							<i class="fa fa-chevron-down movementExpand" aria-hidden="true"></i>
+						</div>
 					</div>
 				</div>
 			</div>
