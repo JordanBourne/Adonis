@@ -23,12 +23,24 @@ var workout = (function() {
 		});
 	}
 
+	function getListOfMovements(workout) {
+		const uniqueMovements = [];
+		workout.movements.forEach((movement) => {
+			if(!uniqueMovements.includes(movement.movement)) {
+				uniqueMovements.push(movement.movement);
+			}
+		});
+
+		return uniqueMovements;
+	}
+
 	function checkMissingMaxes(todaysWorkout) {
-		var trainingMaxes = account.getTrainingMaxes() || {};
-		var missingMaxes = [];
-		todaysWorkout.movements.forEach((exercise) => {
-			if(!trainingMaxes[exercise.movement] && !missingMaxes.includes(exercise.movement)) {
-				missingMaxes.push(exercise.movement);
+		const trainingMaxes = account.getTrainingMaxes() || {};
+		const missingMaxes = [];
+		const todaysMovements = getListOfMovements(todaysWorkout);
+		todaysMovements.forEach((movement) => {
+			if(!trainingMaxes[movement]) {
+				missingMaxes.push(movement);
 			}
 		});
 
@@ -53,34 +65,67 @@ var workout = (function() {
 
 	function startWorkout(workout) {
 		currentWorkout = workout;
-		displayExercise(currentWorkout.movements.shift());
+		addOverviewContainer();
+		loadMovementHeaders(currentWorkout);
 	}
 
-	function displayExercise(currentSet) {
-		finishedSets.push(currentSet);
-		document.getElementById('todaysWorkout').innerHTML = `
-			<h3> ${currentSet.movement} </h3>
-			Set Number: ${currentSet.setNumber} </br>
-			${(currentSet.weight ? `Weight: ${currentSet.weight} </br>` : '')}
-			Reps: ${currentSet.reps} </br>
-			<button onClick=".finishSet()">Finish Set</button>
-		`;
+	function addOverviewContainer() {
+		const templateBody = document.getElementById('templateBody');
+		const movementOverviewTemplate = document.getElementById('movementOverviewTemplate');
+		utility.replaceElements(templateBody, movementOverviewTemplate.content.cloneNode(true));
 	}
 
-	function doNextExercise() {
-		if(currentWorkout.movements.length){
-			return displayExercise(currentWorkout.movements.shift());
-		} else {
-			return finishWorkout();
-		}
+	function loadMovementHeaders(currentWorkout) {
+		const movementsToAdd = getListOfMovements(currentWorkout);
+		const parentContainer = document.getElementById('movementOverview');
+		movementsToAdd.forEach((movement, index) => {
+			addMovementContainer(parentContainer, movement, index);
+		});
 	}
 
-	function finishWorkout() {
-		account.saveCompletedWorkout(finishedSets);
-		document.getElementById('todaysWorkout').innerHTML = `
-			<h3> You've finished day ${currentWorkout.day}!</h3>
-			<button onClick="workout.startProgram()">Start Next Day</button>
-		`;
+	function addMovementContainer(parentContainer, movement, index) {
+		const movementContainer = document.getElementById('movementSetContainerTemplate');
+		const movementSets = findMovementSets(movement);
+		const setContainer = document.getElementById('movementSetTemplate');
+
+		makeMovementAccordion(movementContainer, movement, index);
+		addSetHeader(setContainer, movementContainer);
+
+		movementSets.forEach((set) => {
+			addSetToMovement(setContainer, set, movementContainer);
+		});
+
+		parentContainer.appendChild(movementContainer.content.cloneNode(true));
+	}
+
+	function makeMovementAccordion(container, movement, index) {
+		utility.removeAllElements(container.content.querySelector('.movementSets'));
+		container.content.querySelector('.accordionLabel').innerHTML = utility.nameCase(movement);
+		container.content.querySelector('.accordionInput').id = `tab-${index}`;
+		container.content.querySelector('.accordionLabel').setAttribute('for', `tab-${index}`);
+	}
+
+	function addSetHeader(setContainer, movementContainer) {
+		setContainer.content.querySelector('.movementWeight').innerHTML = 'Weight';
+		setContainer.content.querySelector('.movementReps').innerHTML = 'Reps';
+		movementContainer.content.querySelector('.movementSets').appendChild(setContainer.content.cloneNode(true));
+	}
+
+	function addSetToMovement(setContainer, set, movementContainer) {
+		setContainer.content.querySelector('.movementWeight').innerHTML = set.weight || '-';
+		setContainer.content.querySelector('.movementReps').innerHTML = set.reps;
+		movementContainer.content.querySelector('.movementSets').appendChild(setContainer.content.cloneNode(true));
+	}
+
+	function findMovementSets(movement) {
+		const matchingMovements = [];
+		currentWorkout.movements.forEach((currentMovement) => {
+			if(currentMovement.movement === movement) {
+				matchingMovements.push(currentMovement);
+			}
+		});
+
+		return matchingMovements;
 	}
 
 	return {
@@ -121,7 +166,7 @@ var workout = (function() {
 		},
 
 		expandSection: function(theThing) {
-			console.log(theThing);
+			theThing.className += ' movementExpanded';
 		}
 	};
 })();

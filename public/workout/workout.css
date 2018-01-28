@@ -136,25 +136,25 @@
 	padding-top: 20%;
 }
 
-.movementSetContainer {
+/* .movementSetContainer {
 	width: 100%;
 	padding-left: 10%;
 	padding-right: 10%;
 	border-bottom: 1px solid black;
 	display: flex;
-	align-items: center;
-	transition: 1s;
+	transition: height 1s;
 }
 
 .movementSetContainer:last-child {
 	border-bottom: none;
-}
+} */
 
-.movementHeader {
+/* .movementHeader {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	width: 100%;
+	height: 4em;
 }
 
 .movementName {
@@ -165,12 +165,36 @@
 	font-size: 1.2em;
 }
 
-.testDiv,
-.movementHeader:target {
-	display: none;
+.movementExpanded {
+	height: 500px;
+} */
+
+.movementSetContainer {
+	width: 100%;
 }
 
-.movementHeader + .testDiv,
-.movementHeader ~ .testDiv {
-	display: initial;
+.movementSet {
+	font-size: 1.15em;
+	border-bottom: 1px solid black;
+	height: 1.5em;
+	display: grid;
+	grid-template-columns: 10% 35% 10% 35% 10%;
+}
+
+.movementSet:nth-child(2n) {
+	background-color: rgba(0,0,0,.1);
+}
+
+.movementSet:last-child {
+	border-bottom: none;
+}
+
+.movementWeight {
+	text-align: center;
+	grid-column-start: 2;
+}
+
+.movementReps {
+	text-align: center;
+	grid-column-start: 4;
 }
