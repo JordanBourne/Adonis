@@ -1,10 +1,4 @@
 var utility = (function() {
-	function removeAllElements(elementToEmpty) {
-		while (elementToEmpty.firstChild) {
-			elementToEmpty.removeChild(elementToEmpty.firstChild);
-		}
-	}
-
 	return {
 		addToElement: function(originalElementName, elementToAdd) {
 			var originalElement = document.getElementById(originalElementName);
@@ -29,8 +23,14 @@ var utility = (function() {
 		},
 
 		replaceElements: function(parentElement, replacementElement) {
-			removeAllElements(parentElement);
+			utility.removeAllElements(parentElement);
 			parentElement.appendChild(replacementElement);
+		},
+
+		removeAllElements: function(elementToEmpty) {
+			while (elementToEmpty.firstChild) {
+				elementToEmpty.removeChild(elementToEmpty.firstChild);
+			}
 		}
 	};
 })();

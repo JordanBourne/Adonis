@@ -1,0 +1,113 @@
+html, body {
+    height: 100%;
+	width: 100%;
+    margin: 0;
+    padding: 0;
+	font-family: 'Quicksand', sans-serif;
+}
+
+:root {
+	--orange-1: #bc642d;
+}
+
+.templateBody {
+    height: 100%;
+	width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.centerContent {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.chevronSizing {
+	font-size: .8em;
+}
+
+.standardGrid {
+	display: grid;
+	height: 100%;
+	width: 100%;
+	grid-template: repeat(10, 1fr) / repeat(6, 1fr);
+}
+
+.standardFlex {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+}
+
+.mainArrow {
+	color: var(--orange-1);
+}
+
+.bottomNavButton {
+	display: flex;
+	align-items: center;
+	font-size: 4em;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+	cursor: pointer;
+}
+
+.bottomNavButton:active {
+	background-color: #bababa;
+}
+
+.accordionInput {
+	position: absolute;
+	opacity: 0;
+	z-index: -1;
+}
+
+.accordionLabel {
+	position: relative;
+	display: block;
+	padding: 0 0 0 1em;
+	font-weight: bold;
+	font-size: 1.25em;
+	line-height: 3;
+	cursor: pointer;
+}
+
+.accordionContent {
+	max-height: 0;
+	overflow: hidden;
+	-webkit-transition: max-height .35s;
+	-o-transition: max-height .35s;
+	transition: max-height .35s;
+	border-bottom: 1px solid black;
+}
+.accordionContent p {
+	margin: 1em;
+}
+/* :checked */
+.accordionInput:checked ~ .accordionContent {
+	max-height: 50em;
+}
+/* Icon */
+label::after {
+	position: absolute;
+	right: 0;
+	top: 0;
+	display: block;
+	width: 3em;
+	height: 3em;
+	line-height: 3;
+	text-align: center;
+	-webkit-transition: all .35s;
+	-o-transition: all .35s;
+	transition: all .35s;
+}
+
+.accordionInput[type=checkbox] + label::after {
+	content: "+";
+}
+
+.accordionInput[type=checkbox]:checked + label::after {
+	content: "-";
+}

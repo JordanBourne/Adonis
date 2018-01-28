@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="../global/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css">
+		<link rel="stylesheet" type="text/css" href="../global/global.css">
+		<link rel="stylesheet" type="text/css" href="workout.css">
+	</head>
+	<body>
+		<div class="templateBody" id="templateBody">
+
+		</div>
+		<!-- TEMPLATE FOR MISSING PROGRAM -->
+
+		<!-- TEMPLATE FOR PROGRAM FOUND -->
+		<template id="overviewTemplate">
+			<div class="standardGrid" id="workoutOverview">
+				<h1 class="workoutTitle centerContent" id="workoutTitle"></h1>
+				<h2 class="workoutDay centerContent" id="workoutDay"></h2>
+				<div class="workoutDescription" id="workoutDescription"></div>
+				<div class="workoutOverviewButtons" id="startWorkoutButtonArea">
+					<div class="bottomNavButton centerContent" id="startWorkout">
+						<div onclick="workout.startProgram()">
+							Start Workout
+							<i class="fa fa-chevron-right chevronSizing mainArrow" aria-hidden="true"></i>
+						</div>
+					</div>
+					<div class="bottomNavButton skipWorkout centerContent" id="skipWorkout">
+						<div>
+							Skip Workout
+							<i class="fa fa-chevron-right chevronSizing" aria-hidden="true"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</template>
+
+		<!-- TEMPLATE FOR MISSING MAXES PAGE -->
+		<template id="missingMaxesTemplate">
+			<div class="standardGrid" id="missingMaxes">
+				<h2 class="maxesDay centerContent" id="maxesDay">Day 1</h2>
+				<h3 class="maxesTitle centerContent" id="maxesTitle">We're missing a few numbers</h3>
+				<div class="maxesDescription" id="maxesDescription">
+					To calculate the workout for the day please enter your one repitition max for each following lift
+				</div>
+				<div class="maxesMovements" id="maxesMovements">
+					<div class="missingMax">
+						<div class="missingMaxTitle">Movement</div>
+						<div class="missingMaxWeight">Weight</div>
+					</div>
+				</div>
+				<div class="maxesStartWorkoutButtonArea" id="maxesStartWorkoutButtonArea">
+					<div class="bottomNavButton centerContent" id="maxesStartWorkoutButton">
+						<div onclick="workout.saveMaxes()">
+							Start Workout
+							<i class="fa fa-chevron-right chevronSizing mainArrow" aria-hidden="true"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</template>
+
+		<!-- TEMPLATE FOR INDIVIDUAL MISSING MAX -->
+		<template id="missingMaxTemplate">
+			<div class="missingMax">
+				<div class="missingMaxTitle"></div>
+				<input type="number" class="missingMaxWeight"></div>
+			</div>
+		</template>
+
+		<!-- TEMPLATE FOR WORKOUT SET -->
+		<template id="movementOverviewTemplate">
+			<div class="standardFlex movementOverview" id="movementOverview">
+			</div>
+		</template>
+
+		<template id="movementSetContainerTemplate">
+			<div class="movementSetContainer">
+				<input class="accordionInput" id="tab-one" type="checkbox" name="tabs">
+				<label class="accordionLabel" for="tab-one">Bench Press</label>
+				<div class="accordionContent movementSets">
+					<div class="movementSet">
+						<span class="movementWeight">Weight</span>
+						<span class="movementReps">Reps</span>
+					</div>
+				</div>
+			</div>
+		</template>
+
+		<template id="movementSetTemplate">
+			<div class="movementSet">
+				<span class="movementWeight">80</span>
+				<span class="movementReps">1</span>
+			</div>
+		</template>
+
+		<script src="../utility.js"></script>
+		<script src="../httpClient.js"></script>
+		<script src="../program/programList.js"></script>
+		<script src="../account.js"></script>
+		<script src="workout.js"></script>
+	</body>
+</html>

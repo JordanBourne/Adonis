@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="../global/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css">
+		<link rel="stylesheet" type="text/css" href="../global/global.css">
+		<link rel="stylesheet" type="text/css" href="suggestedProgram.css">
+	</head>
+	<body>
+		<template id="suggestedProgram">
+			<div class="standardGrid" id="recommendedProgram">
+				<h1 class="spSubheader centerContent" id="programTopPick">
+					Your Top Pick
+				</h1>
+				<h2 class="spFormHeader centerContent" id="programTitle">
+				</h2>
+
+				<div class="spProgramOverview" id="programOverview">
+					<div class="spProgramItem" id="programDays">
+						<span class="spProgramOverviwTitle">Days</span><br />
+						4
+					</div>
+					<div class="spProgramItem" id="programFocus">
+						<span class="spProgramOverviwTitle">Focus</span><br />
+						Look Better
+					</div>
+					<div class="spProgramItem" id="programExperience">
+						<span class="spProgramOverviwTitle">Experience</span><br />
+						Beginner
+					</div>
+				</div>
+
+				<div class="spProgramDetails" id="programDetails">
+					More Information <i class="fa fa-info-circle chevronSizing" aria-hidden="true"></i>
+				</div>
+
+				<div class="spProgramButtonArea" id="programButtonArea">
+					<div class="bottomNavButton centerContent" id="chooseProgram">
+						<div onclick="suggestedProgram.selectProgram()">
+							Choose Program
+							<i class="fa fa-chevron-right chevronSizing mainArrow" aria-hidden="true"></i>
+						</div>
+					</div>
+					<div class="bottomNavButton centerContent" id="browseAll">
+						<div>
+							Browse All
+							<i class="fa fa-chevron-right chevronSizing" aria-hidden="true"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</template>
+
+		<template id="newUserPrompt">
+			<div class="standardGrid" id="questionnaire">
+				<h1 class="spFormHeader centerContent" id="questionnaireTitle">
+					Welcome
+				</h1>
+				<p class="spWelcomeText">
+					To recommend a program we first need to a little about your goals.
+					These answers can be changed at any time.
+				</p>
+
+				<h2 class="spQuestionTitle centerContent" id="yourGoal">Your Goal</h2>
+				<div class="spQuestionAnswer" id="lookBetter">
+					<span class="spQuestionText">Look Better</span>
+				</div>
+				<div class="spQuestionAnswer" id="getStronger">
+					<span class="spQuestionText">Get Stronger</span>
+				</div>
+
+				<h2 class="spQuestionTitle centerContent" id="daysPerWeek">Days Per Week</h2>
+				<div class="spQuestionAnswer centerContent" id="numberOfDays">
+					<span class="spQuestionText">2</span>
+					<span class="spQuestionText">3</span>
+					<span class="spQuestionText">4</span>
+					<span class="spQuestionText">5</span>
+					<span class="spQuestionText">6</span>
+					<span class="spQuestionText">7</span>
+				</div>
+
+				<div id="aboutContinue">
+					<div class="bottomNavButton centerContent" id="continueButton">
+						<div onclick="suggestedProgram.setProgramPreferences()">
+							Continue
+							<i class="fa fa-chevron-right chevronSizing" aria-hidden="true"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</template>
+
+		<script src="../utility.js"></script>
+		<script src="../httpClient.js"></script>
+		<script src="../program/programList.js"></script>
+		<script src="../account.js"></script>
+		<script src="suggestedProgram.js"></script>
+	</body>
+</html>

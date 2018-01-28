@@ -1,21 +1,5 @@
 /*global httpRequest*/
 var account = (function() {
-	function downloadProgram(programInfo) {
-		if(!programInfo) {
-			return;
-		}
-
-		httpRequest.get(`http://localhost:3000/v1/downloadProgram/${programInfo.name}`, (err, response) => {
-			if(err) {
-				console.log(err);
-			}
-
-			const programData = response.data.program;
-			localStorage.setItem('currentProgram', JSON.stringify(programData));
-			return programData;
-		});
-	}
-
 	function saveProgramInfo(program) {
 		let programInformation = {
 			name: program.details.name,
@@ -26,19 +10,20 @@ var account = (function() {
 	}
 
 	return {
-		getProgram: function() {
-			if(localStorage.getItem('currentProgram')) {
-				return JSON.parse(localStorage.getItem('currentProgram'));
-			}
-			return downloadProgram(localStorage.getItem('programInformation'));
-		},
-
 		getTrainingMaxes: function() {
 			return JSON.parse(localStorage.getItem('trainingMaxes'));
 		},
 
 		getCurrentDay: function() {
-			return JSON.parse(localStorage.getItem('programInformation')).day;
+			return JSON.parse(localStorage.getItem('selectedProgram')).day;
+		},
+
+		getRecommendedProgram: function() {
+			return JSON.parse(localStorage.getItem('recommendedProgram'));
+		},
+
+		getSelectedProgram: function() {
+			return JSON.parse(localStorage.getItem('selectedProgram'));
 		},
 
 		incrementDay: function() {
@@ -64,7 +49,7 @@ var account = (function() {
 					workouts: [completedWorkout]
 				};
 			}
-			
+
 			account.incrementDay();
 			return localStorage.setItem('completedWorkouts', JSON.stringify(completedWorkouts));
 		},
@@ -78,7 +63,11 @@ var account = (function() {
 		},
 
 		selectedProgramName: function() {
-			return JSON.parse(localStorage.getItem('programInformation')).name;
+			return JSON.parse(localStorage.getItem('selectedProgram')).name;
+		},
+
+		setRecommendedProgram: function(program) {
+			return localStorage.setItem('recommendedProgram', JSON.stringify(program));
 		}
 	};
 })();
