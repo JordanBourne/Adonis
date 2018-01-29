@@ -70,7 +70,15 @@
 
 		<!-- TEMPLATE FOR WORKOUT SET -->
 		<template id="movementOverviewTemplate">
-			<div class="standardFlex movementOverview" id="movementOverview">
+			<div class="movementOverviewSection">
+				<div class="standardFlex movementOverview" id="movementOverview">
+				</div>
+				<div class="bottomNavButton resumeWorkoutButton centerContent">
+					<div onclick="workout.resumeWorkout()">
+						Resume Workout
+						<i class="fa fa-chevron-right chevronSizing mainArrow" aria-hidden="true"></i>
+					</div>
+				</div>
 			</div>
 		</template>
 
