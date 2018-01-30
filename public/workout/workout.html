@@ -87,18 +87,38 @@
 				<input class="accordionInput" id="tab-one" type="checkbox" name="tabs">
 				<label class="accordionLabel" for="tab-one">Bench Press</label>
 				<div class="accordionContent movementSets">
-					<div class="movementSet">
-						<span class="movementWeight">Weight</span>
-						<span class="movementReps">Reps</span>
-					</div>
 				</div>
 			</div>
 		</template>
 
 		<template id="movementSetTemplate">
 			<div class="movementSet">
-				<span class="movementWeight">80</span>
-				<span class="movementReps">1</span>
+				<span class="movementWeight"></span>
+				<span class="movementReps"></span>
+			</div>
+		</template>
+
+		<template id="workoutTemplate">
+			<div class="standardGrid workoutContainer">
+				<div class="workoutMovement centerContent" id="workoutMovement"></div>
+				<div class="workoutWeight centerContent" id="workoutWeight"></div>
+				<div class="workoutRepContainer" id="workoutRepContainer">
+					<div class="workoutRepHeader" id="workoutRepHeader">Reps</div>
+					<div class="workoutMinus" id="workoutMinus">-</div>
+					<div class="workoutReps" id="workoutReps"></div>
+					<div class="workoutPlus" id="workoutPlus">+</div>
+				</div>
+				<div class="workoutButtons" id="workoutButtons">
+					<div class="workoutPreviousSet">
+						Previous
+					</div>
+					<div class="workoutNextSet">
+						Done
+					</div>
+				</div>
+				<div class="workoutTimer centerContent" id="workoutTimer">
+					2:58
+				</div>
 			</div>
 		</template>
 

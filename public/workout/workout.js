@@ -128,6 +128,18 @@ var workout = (function() {
 		return matchingMovements;
 	}
 
+	function doNextWorkout() {
+		let nextMovement = currentWorkout.movements[0];
+		let workoutContainer = document.getElementById('workoutTemplate');
+		const templateBody = document.getElementById('templateBody');
+
+		workoutContainer.content.querySelector('.workoutMovement').innerHTML = utility.nameCase(nextMovement.movement);
+		workoutContainer.content.querySelector('.workoutWeight').innerHTML = `${nextMovement.weight} Pounds`;
+		workoutContainer.content.querySelector('.workoutReps').innerHTML = nextMovement.reps;
+
+		utility.replaceElements(templateBody, workoutContainer.content.cloneNode(true));
+	}
+
 	return {
 		startProgram: function() {
 			var program = programList.getProgram();
@@ -161,12 +173,8 @@ var workout = (function() {
 			return startWorkout(workout);
 		},
 
-		finishSet: function() {
-			doNextExercise();
-		},
-
-		expandSection: function(theThing) {
-			theThing.className += ' movementExpanded';
+		resumeWorkout: function() {
+			return doNextWorkout();
 		}
 	};
 })();
