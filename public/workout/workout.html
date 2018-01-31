@@ -104,20 +104,21 @@
 				<div class="workoutWeight centerContent" id="workoutWeight"></div>
 				<div class="workoutRepContainer" id="workoutRepContainer">
 					<div class="workoutRepHeader" id="workoutRepHeader">Reps</div>
-					<div class="workoutMinus" id="workoutMinus">-</div>
+					<!-- <div class="workoutMinus" id="workoutMinus">-</div> -->
 					<div class="workoutReps" id="workoutReps"></div>
-					<div class="workoutPlus" id="workoutPlus">+</div>
+					<!-- <div class="workoutPlus" id="workoutPlus">+</div> -->
 				</div>
 				<div class="workoutButtons" id="workoutButtons">
-					<div class="workoutPreviousSet">
+					<!-- <div class="workoutPreviousSet">
 						Previous
-					</div>
-					<div class="workoutNextSet">
+						<i class="fa fa-chevron-right chevronSizing" aria-hidden="true"></i>
+					</div> -->
+					<div class="workoutNextSet" onclick="workout.doNextSet()">
 						Done
+						<i class="fa fa-chevron-right chevronSizing mainArrow" aria-hidden="true"></i>
 					</div>
 				</div>
 				<div class="workoutTimer centerContent" id="workoutTimer">
-					2:58
 				</div>
 			</div>
 		</template>

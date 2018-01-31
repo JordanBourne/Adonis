@@ -226,6 +226,18 @@
 	align-items: flex-end;
 }
 
+.workoutTimer {
+	font-size: 4em;
+}
+
+.workoutPreviousSet {
+	cursor: pointer;
+}
+
+.workoutNextSet {
+	cursor: pointer;
+}
+
 /*General Layout*/
 
 #workoutMovement {
