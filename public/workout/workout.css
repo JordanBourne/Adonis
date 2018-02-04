@@ -1,3 +1,7 @@
+/************************
+**** WORKOUT WELCOME ****
+************************/
+
 .workoutTitle {
 	margin: 0px;
 	padding: 0px;
@@ -63,6 +67,10 @@
 #skipWorkout {
 	grid-row-start: 3;
 }
+
+/************************
+***** MAXES STYLES ******
+************************/
 
 .maxesDay {
 	font-size: 6em;
@@ -131,43 +139,14 @@
 	grid-row-start: 2;
 }
 
+/************************
+*** MOVEMENT OVERVIEW ***
+************************/
+
 .movementOverview {
 	font-size: 2.5em;
 	padding-top: 20%;
 }
-
-/* .movementSetContainer {
-	width: 100%;
-	padding-left: 10%;
-	padding-right: 10%;
-	border-bottom: 1px solid black;
-	display: flex;
-	transition: height 1s;
-}
-
-.movementSetContainer:last-child {
-	border-bottom: none;
-} */
-
-/* .movementHeader {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	width: 100%;
-	height: 4em;
-}
-
-.movementName {
-	font-size: 1.4em;
-}
-
-.movementExpand {
-	font-size: 1.2em;
-}
-
-.movementExpanded {
-	height: 500px;
-} */
 
 .movementSetContainer {
 	width: 100%;
@@ -197,4 +176,108 @@
 .movementReps {
 	text-align: center;
 	grid-column-start: 4;
+}
+
+.resumeWorkoutButton {
+	width: 100%;
+	font-size: 4em;
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+
+.movementOverviewSection {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	justify-content: space-between;
+}
+
+/************************
+**** ACTIVE WORKOUT *****
+************************/
+
+.workoutContainer {
+	font-size: 4em;
+}
+
+.workoutMovement {
+	font-size: 2em;
+}
+
+.workoutWeight {
+	font-size: 1.5em;
+}
+
+.workoutRepContainer {
+	display: grid;
+	grid-template-columns: 25% 20% 10% 20% 25%;
+	grid-template-rows: 15% 35% 35% 15%;
+	text-align: center;
+	font-size: 1.3em;
+}
+
+.workoutRepHeader {
+	text-align: center;
+}
+
+.workoutButtons {
+	display: flex;
+	justify-content: space-around;
+	align-items: flex-end;
+}
+
+.workoutTimer {
+	font-size: 4em;
+}
+
+.workoutPreviousSet {
+	cursor: pointer;
+}
+
+.workoutNextSet {
+	cursor: pointer;
+}
+
+/*General Layout*/
+
+#workoutMovement {
+	grid-area: 2 / 1 / span 2 / span 6;
+}
+
+#workoutWeight {
+	grid-area: 4 / 1 / span 1 / span 6;
+}
+
+#workoutRepContainer {
+	grid-area: 5 / 1 / span 2 / span 6;
+}
+
+#workoutButtons {
+	grid-area: 7 / 1 / span 1 / span 6;
+}
+
+#workoutTimer {
+	grid-area: 9 / 1 / span 2 / span 6;
+}
+
+/* Rep Layout */
+
+#workoutRepHeader {
+	grid-row-start: 2;
+	grid-column: span 5;
+}
+
+#workoutMinus {
+	grid-column-start: 2;
+	grid-row-start: 3;
+}
+
+#workoutReps {
+	grid-column-start: 3;
+	grid-row-start: 3;
+}
+
+#workoutPlus {
+	grid-column-start: 4;
+	grid-row-start: 3;
 }

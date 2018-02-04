@@ -2,6 +2,7 @@
 var workout = (function() {
 	let currentWorkout;
 	let finishedSets = [];
+	let timer;
 
 	window.onload = function() {
 		const programInformation = account.getSelectedProgram();
@@ -128,6 +129,36 @@ var workout = (function() {
 		return matchingMovements;
 	}
 
+	function doNextWorkout() {
+		let nextMovement = currentWorkout.movements[0];
+		let workoutContainer = document.getElementById('workoutTemplate');
+		const templateBody = document.getElementById('templateBody');
+
+		workoutContainer.content.querySelector('.workoutMovement').innerHTML = utility.nameCase(nextMovement.movement);
+		workoutContainer.content.querySelector('.workoutWeight').innerHTML = `${nextMovement.weight} Pounds`;
+		workoutContainer.content.querySelector('.workoutReps').innerHTML = nextMovement.reps;
+		workoutContainer.content.querySelector('.workoutTimer').innerHTML = '0:00';
+
+		utility.replaceElements(templateBody, workoutContainer.content.cloneNode(true));
+		startTimer();
+	}
+
+	function startTimer() {
+		let startTime = new Date().getTime();
+
+		timer = setInterval(() => {
+			let currentTime = (new Date().getTime()) - startTime;
+			let currentMinute = Math.floor(currentTime / 1000 / 60) % 60;
+			let currentSecond = Math.floor(currentTime / 1000) % 60;
+
+			if(currentSecond < 10) {
+				currentSecond = `0${currentSecond}`;
+			}
+
+			document.getElementById('workoutTimer').innerHTML = `${currentMinute}:${currentSecond}`;
+		}, 1000);
+	}
+
 	return {
 		startProgram: function() {
 			var program = programList.getProgram();
@@ -161,12 +192,14 @@ var workout = (function() {
 			return startWorkout(workout);
 		},
 
-		finishSet: function() {
-			doNextExercise();
+		resumeWorkout: function() {
+			return doNextWorkout();
 		},
 
-		expandSection: function(theThing) {
-			theThing.className += ' movementExpanded';
+		doNextSet: function() {
+			finishedSets.push(currentWorkout.movements.shift());
+			clearInterval(timer);
+			return workout.resumeWorkout();
 		}
 	};
 })();
